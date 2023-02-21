@@ -180,7 +180,7 @@ public class CustomerDAO implements Serializable{
             }
         }
     }
-    public boolean updateCourse(CustomerDTO dto) throws SQLException {
+    public boolean updateAccount(CustomerDTO dto) throws SQLException {
         Connection con = null;
         PreparedStatement stm = null;
         boolean checkUpdate = true;
@@ -344,4 +344,213 @@ public class CustomerDAO implements Serializable{
         return result;
     }
        
+       
+       public CustomerDTO getAccountByUsername(String username)
+            throws SQLException, NamingException  {
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        CustomerDTO account = null;
+        try {
+            //1. Get connection
+            con = DBHelper.makeConnection();
+            if (con != null) {
+                //2. Create sql string
+                String sql = "Select username, password, phoneNum, custName, address, email\n"
+                        + "From Customer "
+                        + "where username = ? ";
+                //3. Create statement
+                stm = con.prepareStatement(sql);
+                //4. Execute Query
+                rs = stm.executeQuery();
+                //5. Process result
+                while (rs.next()) {
+                    //get field/column
+//                    String username = rs.getString("username");
+                    String password = rs.getString("password");
+                    String phoneNum = rs.getString("phoneNum");
+                    String custName = rs.getString("custName");
+                    String address = rs.getString("address");
+                    String email = rs.getString("email");
+                    //Create DTO instance
+                    CustomerDTO dto = new CustomerDTO(username, password, phoneNum, address, custName, email);
+                    //add to bookList
+//                    if (this.itemsList == null) {
+//                        this.itemsList = new ArrayList<>();
+//                    }//end bookList is not existed
+//                    this.itemsList.add(dto);
+                }//end bookList is traversed
+            }//end con is available
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return account;
+    }
+       
+       public String getPassword(String username) 
+            throws NamingException, SQLException {
+        
+        String password = null;
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            if (username == null || username.trim().isEmpty()) {
+//              result = false;
+            } else {
+                con = DBHelper.makeConnection();
+                if (con != null) {
+                    String sqlStr = "SELECT password "
+                            + "FROM Customer "
+                            + "WHERE username = ?";
+                    stmt = con.prepareStatement(sqlStr);
+                    stmt.setString(1, username);
+                    rs = stmt.executeQuery();
+                    if (rs.next()) {
+                        password = rs.getString("password");
+                    }
+                }
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stmt != null) {
+                stmt.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return password;
+        
+    }
+       
+       public String getPhoneNum(String username) 
+            throws NamingException, SQLException {
+        
+        String phoneNum = null;
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            if (username == null || username.trim().isEmpty()) {
+//              result = false;
+            } else {
+                con = DBHelper.makeConnection();
+                if (con != null) {
+                    String sqlStr = "SELECT phoneNum "
+                            + "FROM Customer "
+                            + "WHERE username = ?";
+                    stmt = con.prepareStatement(sqlStr);
+                    stmt.setString(1, username);
+                    rs = stmt.executeQuery();
+                    if (rs.next()) {
+                        phoneNum = rs.getString("phoneNum");
+                    }
+                }
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stmt != null) {
+                stmt.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return phoneNum;
+        
+    }
+       public String getEmail(String username) 
+            throws NamingException, SQLException {
+        
+        String email = null;
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            if (username == null || username.trim().isEmpty()) {
+//              result = false;
+            } else {
+                con = DBHelper.makeConnection();
+                if (con != null) {
+                    String sqlStr = "SELECT email "
+                            + "FROM Customer "
+                            + "WHERE username = ?";
+                    stmt = con.prepareStatement(sqlStr);
+                    stmt.setString(1, username);
+                    rs = stmt.executeQuery();
+                    if (rs.next()) {
+                        email = rs.getString("email");
+                    }
+                }
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stmt != null) {
+                stmt.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return email;
+        
+    }
+       public String getAddress(String username) 
+            throws NamingException, SQLException {
+        
+        String address = null;
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            if (username == null || username.trim().isEmpty()) {
+//              result = false;
+            } else {
+                con = DBHelper.makeConnection();
+                if (con != null) {
+                    String sqlStr = "SELECT address "
+                            + "FROM Customer "
+                            + "WHERE username = ?";
+                    stmt = con.prepareStatement(sqlStr);
+                    stmt.setString(1, username);
+                    rs = stmt.executeQuery();
+                    if (rs.next()) {
+                        address = rs.getString("address");
+                    }
+                }
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stmt != null) {
+                stmt.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return address;
+        
+    }
+    
 }

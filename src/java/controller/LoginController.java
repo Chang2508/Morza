@@ -57,6 +57,7 @@ public class LoginController extends HttpServlet {
             if (button != null) {
                 String username = request.getParameter("txtUsername");
                 String password = request.getParameter("txtPassword");
+                
 
                 CustomerDAO dao = new CustomerDAO();
                 CustomerDTO result = dao.checkLogin(username, password);
@@ -75,6 +76,10 @@ public class LoginController extends HttpServlet {
                     HttpSession session = request.getSession();
                     session.setAttribute("username", username);
                     session.setAttribute("custName", dao.getCustName(username));
+                    session.setAttribute("password", dao.getPassword(username));
+                    session.setAttribute("phoneNum", dao.getPhoneNum(username));
+                    session.setAttribute("email", dao.getEmail(username));
+                    session.setAttribute("address", dao.getAddress(username));
                 } else {
                     errors.setErrorMsg("Wrong username or password! Please check again...");
                     isError = true;

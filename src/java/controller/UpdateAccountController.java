@@ -26,8 +26,8 @@ import dto.CustomerDTO;
 @WebServlet(name = "UpdateAccountController", urlPatterns = {"/UpdateAccountController"})
 public class UpdateAccountController extends HttpServlet {
 
-    private final String ADMIN_PAGE = "admin.jsp";
-    private final String ERROR_PAGE = "invalid.html";
+    private final String SETTINGS_PAGE = "settings.jsp";
+    private final String ERROR_PAGE = "404.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,7 +43,7 @@ public class UpdateAccountController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String searchValue = request.getParameter("txtSearchValue");
-        String url = ADMIN_PAGE;
+        String url = SETTINGS_PAGE;
         try {
             String username = request.getParameter("txtUsername");
             String password = request.getParameter("txtPassword");
@@ -52,21 +52,40 @@ public class UpdateAccountController extends HttpServlet {
             String address = request.getParameter("txtAddress");
             String email = request.getParameter("txtEmail");
             //1. call DAO
-            CustomerDAO daon = new CustomerDAO();
-            CustomerDTO dto = new CustomerDTO(username, password, phoneNum, address, custName, email);
-
-            boolean result = daon.updateCourse(dto);
-            if (result == true) {
-                daon.searchAccount(searchValue);
-                daon.showAcc();
-                List<CustomerDTO> jojo = daon.getItemsList();
-
-                request.setAttribute("ACC_RESULT", jojo);
-                url = ADMIN_PAGE;
+            CustomerDAO dao = new CustomerDAO();
+            CustomerDTO customer = dao.getAccountByUsername(username);
+            request.setAttribute("account", customer);
+            if(customer != null) {
+                customer.setPassword(password);
+                customer.setPhoneNum(phoneNum);
+                 customer.setCustName(custName);
+                customer.setAddress(address);
+                customer.setEmail(email);
+                
+                boolean result = dao.updateAccount(customer);
+                 if (result==true) {
+        // update successful
+        request.setAttribute("SUCCESS_MSG", "Account updated successfully!");
+    } else {
+        // update failed
+        request.setAttribute("ERROR_MSG", "Failed to update account");
+    }
+            }else {
+                request.setAttribute("ERROR_MSG", "Account not found");
             }
 
-        } catch (NamingException ex) {
-            log("ShowItemsServlet _ Naming _ " + ex.getMessage());
+//            boolean result = daon.updateAccount(dto);
+//            if (result == true) {
+//                daon.searchAccount(searchValue);
+//                daon.showAcc();
+//                List<CustomerDTO> jojo = daon.getItemsList();
+//
+//                request.setAttribute("ACC_RESULT", jojo);
+//                url = SETTINGS_PAGE;
+//            }
+ 
+        }catch (NamingException ex) {
+             log("ShowItemsServlet _ Naming _ " + ex.getMessage());
         } catch (SQLException ex) {
             log("ShowItemsServlet _ SQL _ " + ex.getMessage());
         } finally {
