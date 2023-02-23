@@ -232,14 +232,15 @@
 </ul>
 
 <div class="ml-auto">
-<a href="search.jsp">
-<form class="d-none d-sm-inline-block form-inline mx-2 my-2 my-md-0 mw-100 navbar-search">
+<!--<a href="search.jsp">-->
+<form class="d-none d-sm-inline-block form-inline mx-2 my-2 my-md-0 mw-100 navbar-search" action="MainController">
 <div class="input-group">
-<input type="text" class="form-control bg-light text-dark font-weight-bold" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" value="Burger">
+<input type="text" class="form-control bg-light text-dark font-weight-bold" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" name="txtSearchValue" value="">
 <div class="input-group-append">
-<button class="btn btn-primary" type="button">
-<i class="mdi mdi-magnify"></i>
-</button>
+<input class="btn btn-primary" type="submit" value="Find Product" name="btAction" >
+<!--<input type="submit" value="Find Product" name="btAction" />-->
+<!--<i class="mdi mdi-magnify"></i>-->
+<!--</button>-->
 </div>
 </div>
 </form>
@@ -254,11 +255,11 @@
 
 <ul class="nav nav-tabs border-0 mb-4" id="myTab" role="tablist">
 <li class="nav-item" role="presentation">
-<a class="nav-link active border-0 bg-primary text-white rounded" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="mdi mdi-home-variant-outline mr-2"></i>Restaurants (8)</a>
+<a class="nav-link active border-0 bg-primary text-white rounded" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="mdi mdi-home-variant-outline mr-2"></i>Category</a>
 </li>
-<li class="nav-item" role="presentation">
+<!--<li class="nav-item" role="presentation">
 <a class="nav-link border-0 bg-light text-dark rounded ml-3" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="mdi mdi-silverware-fork-knife mr-2"></i>Dishes (23)</a>
-</li>
+</li>-->
 </ul>
 <div class="tab-content" id="myTabContent">
 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -321,6 +322,37 @@
 </a>
 </div>
 </div>
+    
+    
+    <div class="d-flex align-items-center justify-content-between mb-3 mt-2">
+    
+  
+<a class="nav-link active border-0 bg-primary text-white rounded" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="mdi mdi-home-variant-outline mr-2"></i>Search Result</a>
+</div>
+
+    
+<!--<div class="row">-->
+    <c:set var="context" value="${pageContext.request.contextPath}" />
+    <c:if test="${not empty requestScope.PRO_RESULT}">
+<c:set var="pa" value="${requestScope.PRO_RESULT}"/>
+                <c:forEach var="result" items="${requestScope.PRO_RESULT}" varStatus="counter">
+                    <form action="MainController">
+<a href="#" class="text-decoration-none text-dark col-lg-3 col-md-6 mb-4" data-toggle="modal" data-target="#myitemsModal">
+    <img src="data:image/png;base64,${result.base64ImageData}"  width="200px" height="200px"/>
+    
+<div class="d-flex align-items-center mt-3 mb-2">
+<p class="text-black h6 m-0">${result.proName}</p>
+<!--<input class="text-black h6 m-0" type="text" name="txtProname" value="${result.proName}" />-->
+<span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${result.price}</span>
+</div>
+<p class="small mb-2"><i class="mdi mdi-star text-warning"></i> <span class="font-weight-bold text-dark ml-1">4.8</span>(1,873) <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> ${result.catgoryName} <i class="mdi mdi-motorbike ml-2 mr-2"></i>Freeship</p>
+</a>
+    </form>
+</c:forEach>
+</c:if>
+   
+    
+    
 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
 <div class="row d-flex align-items-center justify-content-center vh-100">

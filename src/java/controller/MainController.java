@@ -7,28 +7,33 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.List;
-import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import dao.CustomerDAO;
-import dto.CustomerDTO;
 
 /**
  *
- * @author thehu
+ * @author DELL
  */
-@WebServlet(name = "UpdateAccountController", urlPatterns = {"/UpdateAccountController"})
-public class UpdateAccountController extends HttpServlet {
-
-//    private final String SETTINGS_PAGE = "settings.jsp";
-//    private final String ERROR_PAGE = "404.jsp";
-
+@WebServlet(name = "MainController", urlPatterns = {"/MainController"})
+public class MainController extends HttpServlet {
+private final String LOGIN_PAGE ="login.jsp";
+    private final String ADMIN_PAGE ="admin.jsp";
+    private final String LOGIN ="LoginController";
+    private final String SEARCH ="SearchAccountController";
+    private final String UPDATE ="UpdateAccountController";
+    private final String DELETE ="DeleteAccountServlet";
+    private final String CREATE ="CreateNewAccountController";
+    private final String PRODUCT_PAGE ="searchProduct.jsp";
+    private final String SEARCH_PRODUCT ="SearchProductAController";
+    private final String BAN_CONTROLLER ="DeleteAcountController";
+    private final String SHOW_PRODUCT_CONTROLLER ="ShowProductController";
+    private final String SHOW_IMG_CONTROLLER ="ShowImageController";
+    private final String PRODUCT_ADMIN ="ManageProductController";
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,35 +46,40 @@ public class UpdateAccountController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-         String username = request.getParameter("txtUsername");
-//        String url = SETTINGS_PAGE;
+        String button = request.getParameter("btAction");
+        String url = LOGIN_PAGE;
         try {
-//            String username = request.getParameter("txtUsername");
-//            String password = request.getParameter("txtPassword");
-//            String phoneNum = request.getParameter("txtPhoneNum");
-//            String custName = request.getParameter("txtCustName");
-//            String address = request.getParameter("txtAddress");
-//            String email = request.getParameter("txtEmail");
-            //1. call DAO
-            CustomerDAO dao = new CustomerDAO();
-            CustomerDTO customer = dao.getAccountByUserName(username);
-            
-           
-                request.setAttribute("customer", customer);
-
-            
- 
-        }catch (NamingException ex) {
-             log("ShowItemsServlet _ Naming _ " + ex.getMessage());
-        } catch (SQLException ex) {
-            log("ShowItemsServlet _ SQL _ " + ex.getMessage());
+            if (button == null) {
+            } else if (button.equals("Login")){
+                url = LOGIN;
+            } else if (button.equals("Sign up")){
+                url = CREATE;
+            } else if (button.equals("Delete")){
+                url = DELETE;
+            } else if (button.equals("Find Account")){
+                url = SEARCH;
+            } else if (button.equals("Reset Account")){
+                url = UPDATE;
+            } else if (button.equals("Product Page")){
+                url = PRODUCT_PAGE;
+            } else if (button.equals("Find Product")){
+                url = SEARCH_PRODUCT;
+            } else if (button.equals("Search_product")){
+                url = PRODUCT_PAGE;
+            } else if (button.equals("Ban")){
+                url = BAN_CONTROLLER;
+            } else if (button.equals("Details")){
+                url = SHOW_PRODUCT_CONTROLLER;
+            } else if (button.equals("SHOWIMG")){
+                url = SHOW_IMG_CONTROLLER;
+             } else if (button.equals("Find")){
+                url = PRODUCT_ADMIN;    
+            }
         } finally {
-            RequestDispatcher rd = request.getRequestDispatcher("testUpdate.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
         }
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

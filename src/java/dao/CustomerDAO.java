@@ -345,55 +345,94 @@ public class CustomerDAO implements Serializable{
     }
        
        
-       public CustomerDTO getAccountByUsername(String username)
-            throws SQLException, NamingException  {
+//       public CustomerDTO getAccountByUsername(String username)
+//            throws SQLException, NamingException  {
+//        Connection con = null;
+//        PreparedStatement stm = null;
+//        ResultSet rs = null;
+//        CustomerDTO account = null;
+//        try {
+//            //1. Get connection
+//            con = DBHelper.makeConnection();
+//            if (con != null) {
+//                //2. Create sql string
+//                String sql = "Select * "
+//                        + "From Customer "
+//                        + "where username = ? ";
+//           
+//                stm = con.prepareStatement(sql);
+//                stm.setString(1, username);
+//                rs = stm.executeQuery();
+//             
+//                while (rs.next()) {
+//                   String password = rs.getString("password");
+//                   String phoneNum = rs.getString("phoneNum");
+//                   String address = rs.getString("address");
+//                   String fullName = rs.getString("custName");
+//                   String email = rs.getString("email");
+//                   account = new CustomerDTO(username, password, phoneNum, address, fullName, email);
+//                   
+//                }
+//            }
+//        } finally {
+//            if (rs != null) {
+//                rs.close();
+//            }
+//            if (stm != null) {
+//                stm.close();
+//            }
+//            if (con != null) {
+//                con.close();
+//            }
+//        }
+//        return account;
+//    }
+      
+       public CustomerDTO getAccountByUserName(String username) 
+            throws NamingException, SQLException {
+        
+//        String password = null;
         Connection con = null;
-        PreparedStatement stm = null;
+        PreparedStatement stmt = null;
         ResultSet rs = null;
-        CustomerDTO account = null;
+        
+        
         try {
-            //1. Get connection
-            con = DBHelper.makeConnection();
-            if (con != null) {
-                //2. Create sql string
-                String sql = "Select username, password, phoneNum, custName, address, email\n"
-                        + "From Customer "
-                        + "where username = ? ";
-                //3. Create statement
-                stm = con.prepareStatement(sql);
-                //4. Execute Query
-                rs = stm.executeQuery();
-                //5. Process result
-                while (rs.next()) {
-                    //get field/column
-//                    String username = rs.getString("username");
-                    String password = rs.getString("password");
-                    String phoneNum = rs.getString("phoneNum");
-                    String custName = rs.getString("custName");
-                    String address = rs.getString("address");
-                    String email = rs.getString("email");
-                    //Create DTO instance
-                    CustomerDTO dto = new CustomerDTO(username, password, phoneNum, address, custName, email);
-                    //add to bookList
-//                    if (this.itemsList == null) {
-//                        this.itemsList = new ArrayList<>();
-//                    }//end bookList is not existed
-//                    this.itemsList.add(dto);
-                }//end bookList is traversed
-            }//end con is available
+            if (username == null || username.trim().isEmpty()) {
+//              result = false;
+            } else {
+                con = DBHelper.makeConnection();
+                if (con != null) {
+                    String sqlStr = "SELECT * "
+                            + "FROM Customer "
+                            + "WHERE username = ?";
+                    stmt = con.prepareStatement(sqlStr);
+                    stmt.setString(1, username);
+                    rs = stmt.executeQuery();
+                    if (rs.next()) {
+                        String password = rs.getNString("password");
+                         String phoneNum = rs.getNString("phoneNum");
+                          String address = rs.getNString("address");
+                           String custName = rs.getNString("custName");
+                            String email = rs.getNString("email");
+                        CustomerDTO acc = new CustomerDTO(username, password, phoneNum, address, custName, email);
+                    }
+                }
+            }
         } finally {
             if (rs != null) {
                 rs.close();
             }
-            if (stm != null) {
-                stm.close();
+            if (stmt != null) {
+                stmt.close();
             }
             if (con != null) {
                 con.close();
             }
         }
-        return account;
+              return null;
     }
+       
        
        public String getPassword(String username) 
             throws NamingException, SQLException {

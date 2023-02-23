@@ -224,18 +224,17 @@
        
 
 <div class="ml-auto">
-<a href="search.jsp">
-<form class="d-none d-sm-inline-block form-inline mx-2 my-2 my-md-0 mw-100 navbar-search">
+<form class="d-none d-sm-inline-block form-inline mx-2 my-2 my-md-0 mw-100 navbar-search" action="MainController">
 <div class="input-group">
-<input type="text" class="form-control bg-light" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+<input type="text" class="form-control bg-light text-dark font-weight-bold" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" name="txtSearchValue" value="">
 <div class="input-group-append">
-<button class="btn btn-primary" type="button">
-<i class="mdi mdi-magnify"></i>
-</button>
+<input class="btn btn-primary" type="submit" value="Find Product" name="btAction" >
+<!--<input type="submit" value="Find Product" name="btAction" />-->
+<!--<i class="mdi mdi-magnify"></i>-->
+<!--</button>-->
 </div>
 </div>
 </form>
-</a>
 <a href="#" class="btn btn-primary " data-toggle="modal" data-target="#filtersModal"><i class="mdi mdi-filter-variant"></i></a>
 <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#cartModal"><i class="mdi mdi-shopping-outline"></i></a>
 </div>
@@ -364,13 +363,13 @@
                         <h2>User <b>Management</b></h2>
                     </div>
                     <div class="col-xs-7">
-                        <a href="createNewAccount.jsp" class="btn btn-primary"><span>Add New User</span></a>
-                        <a href="#" class="btn btn-primary"> <span>Export to Excel</span></a>						
+                        <a href="adminSearchProduct.jsp" class="btn btn-primary"><span>Manage Product</span></a>
+                        <!--<a href="#" class="btn btn-primary"> <span>Export to Excel</span></a>-->						
                     </div>
                 </div>
             </div>
             <div>
-            <form action="SearchAccountController" method="POST">
+            <form action="MainController" method="POST">
                 Search Keyword: <input type="text" name="txtSearchValue" value="" /> 
                 <input type="submit" value="Find Account" name="btAction" />
 
@@ -395,7 +394,7 @@
                 </thead>
                 
                  <c:forEach var="result" items="${requestScope.ACC_RESULT}" varStatus="counter">
-                     <form action="DeleteAcountController">
+                     <form action="MainController">
                 <tbody>
                     <tr>
                         <td>

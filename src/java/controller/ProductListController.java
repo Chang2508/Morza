@@ -5,9 +5,12 @@
  */
 package controller;
 
+import dao.ProductDAO;
+import dto.ProductDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.Base64;
 import java.util.List;
 import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
@@ -16,19 +19,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import dao.CustomerDAO;
-import dto.CustomerDTO;
 
 /**
  *
- * @author thehu
+ * @author DELL
  */
-@WebServlet(name = "UpdateAccountController", urlPatterns = {"/UpdateAccountController"})
-public class UpdateAccountController extends HttpServlet {
-
-//    private final String SETTINGS_PAGE = "settings.jsp";
-//    private final String ERROR_PAGE = "404.jsp";
-
+@WebServlet(name = "ProductListController", urlPatterns = {"/ProductListController"})
+public class ProductListController extends HttpServlet {
+private final String LISTING_PAGE = "listing1.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,32 +39,34 @@ public class UpdateAccountController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-         String username = request.getParameter("txtUsername");
-//        String url = SETTINGS_PAGE;
-        try {
-//            String username = request.getParameter("txtUsername");
-//            String password = request.getParameter("txtPassword");
-//            String phoneNum = request.getParameter("txtPhoneNum");
-//            String custName = request.getParameter("txtCustName");
-//            String address = request.getParameter("txtAddress");
-//            String email = request.getParameter("txtEmail");
-            //1. call DAO
-            CustomerDAO dao = new CustomerDAO();
-            CustomerDTO customer = dao.getAccountByUserName(username);
+        
+        List<ProductDTO> result;
+        String url = LISTING_PAGE;
+        try  {
+          
+           ProductDAO dao = new ProductDAO();
+           dao.getProduct();
+           result = dao.getItemsList();
+           for (ProductDTO product : result) {
+                        String base64ImageData = Base64.getEncoder().encodeToString(product.getPicData());
+                        product.setBase64ImageData(base64ImageData);
+                    }
             
-           
-                request.setAttribute("customer", customer);
-
-            
- 
-        }catch (NamingException ex) {
-             log("ShowItemsServlet _ Naming _ " + ex.getMessage());
-        } catch (SQLException ex) {
-            log("ShowItemsServlet _ SQL _ " + ex.getMessage());
+             if (result != null) {
+                    request.setAttribute("PRODUCT_LIST", result);
+                    url = LISTING_PAGE;
+                    request.getAttribute("PRODUCT_LIST");
+                } else {
+                    url = "404.jsp";
+                }
+        }catch(SQLException ex) {
+            ex.printStackTrace();
+        }catch(NamingException ex) {
+            ex.printStackTrace();
         } finally {
-            RequestDispatcher rd = request.getRequestDispatcher("testUpdate.jsp");
+             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
+           
         }
     }
 

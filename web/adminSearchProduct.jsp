@@ -1,6 +1,6 @@
 <%-- 
-    Document   : explore
-    Created on : Feb 17, 2023, 6:33:42 PM
+    Document   : indexe828
+    Created on : Feb 17, 2023, 6:21:27 PM
     Author     : DELL
 --%>
 
@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from askbootstrap.com/preview/osahan-eat/theme-sidebar/explore.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Oct 2022 05:04:56 GMT -->
+<!-- Mirrored from askbootstrap.com/preview/osahan-eat/theme-sidebar/index.html?fbclid=IwAR0nwIFNYzgqHa21f49Nzv1kLbeDTnnIQIEIfRudCclQdwQMDTmsCY1Ovq4 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Oct 2022 05:04:30 GMT -->
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="icon" type="image/png" href="img/logo.png">
-<title>MORZA</title>
+<title>ADMIN DASHBOARD</title>
 
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
@@ -41,13 +41,13 @@
 </div>
 </a>
 
-<li class="nav-item">
+<li class="nav-item active">
 <a class="nav-link" href="index.jsp">
 <i class="mdi mdi-home-variant-outline"></i>
 <span>Home</span></a>
 </li>
 
-<li class="nav-item active">
+<li class="nav-item">
 <a class="nav-link" href="explore.jsp">
 <i class="mdi mdi-grid-large"></i>
 <span>Explore</span></a>
@@ -66,7 +66,7 @@
 </li>
 
 <li class="nav-item">
-<a class="nav-link d-flex align-items-center" href="messages.jsp">
+<a class="nav-link d-flex" href="messages.jsp">
 <i class="mdi mdi-message-text-outline mr-2"></i>
 <span>Messages</span>
 <span class="rounded-circle bg-white text-primary ml-auto px-2 py-1">2</span></a>
@@ -91,7 +91,7 @@
 <a class="collapse-item" href="messages.jsp">Messages</a>
 <a class="collapse-item" href="search.jsp">Search</a>
 <a class="collapse-item" href="buttons.jsp">Components</a>
-<a class="collapse-item" href="404.jsp">Page Not Found</a>
+ <a class="collapse-item" href="404.jsp">Page Not Found</a>
 <h6 class="collapse-header">Account:</h6>
 <a class="collapse-item" href="signin.jsp">Signin</a>
 <a class="collapse-item" href="signup.jsp">Signup</a>
@@ -115,7 +115,7 @@
 <div class="pr-3"><i class="mdi mdi-account-circle-outline text-white h3 mb-0"></i></div>
 <div>
 <p class="mb-0 text-white">Mark Clarke</p>
-<p class="mb-0 text-white-50 small"><a href="https://askbootstrap.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a9ccd1c8c4d9c5cce9cec4c8c0c587cac6c4">[email&#160;protected]</a></p>
+<p class="mb-0 text-white-50 small"><a href="https://askbootstrap.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afcad7cec2dfc3caefc8c2cec6c381ccc0c2">[email&#160;protected]</a></p>
 </div>
 </div>
 </div>-->
@@ -138,7 +138,7 @@
 <i class="fa fa-bars"></i>
 </button>
 
-    <style>
+     <style>
         .dropdown-menu a {
             font-size: 15px;
             
@@ -148,27 +148,24 @@
            
         }
     </style>
-    <c:set var="name" value="${sessionScope.custName}" />
-        <c:if test="${not empty name}">
-           <li class="dropdown">
+
+    <li class="dropdown">
                                                 <a href="#" data-toggle="dropdown" class="dropdown-toggle user-action"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-</svg>  <b class="caret"> ${sessionScope.custName} </b></a>
+  </svg>  <b class="caret"> Admin </b></a>
                                                 <ul class="dropdown-menu">
                                                     <li><a href="#"><i class="fa fa-user-o"></i><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
   <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
 </svg> Profile</a></li>
 <!--                                                    <li><a href="#"><i class="fa fa-calendar-o"></i> Calendar</a></li>-->
-                                                    <li><a href="settings.jsp"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+                                                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
 </svg>  Settings</a></li>
                                                     <li class="divider"></li>
                                                     <li><a href="LogOutController"><i class="material-icons">&#xE8AC;</i> Logout</a></li>
                                                 </ul>
-                                            </li>  
-        </c:if>
-                              
+                                            </li>   
     
 <ul class="navbar-nav">
 
@@ -190,33 +187,26 @@
 </form>
 </div>
 </li>
-<!--
-<li class="nav-item dropdown no-arrow mx-2 osahan-t-loc">
+
+
+
+
+ 
+<!--<li class="nav-item dropdown no-arrow mx-2 osahan-t-loc">
 <a class="nav-link dropdown-toggle text-dark" href="#" data-toggle="modal" data-target="#addressModal">
 <span class="mdi mdi-crosshairs-gps"></span><span class="ml-2">San Frnciso, california</span>
 </a>
-</li>-->
-<c:if test="${ empty name}">              
-                                            <li class="nav-item dropdown no-arrow mx-2 osahan-t-loc">
-<a class="nav-link dropdown-toggle text-dark" href="signin.jsp" >
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
-  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-</svg><span class="ml-2">Sign in</span>
-</a>
-</li>
-
-<li class="nav-item dropdown no-arrow mx-2 osahan-t-loc">
-<a class="nav-link dropdown-toggle text-dark" href="signup.jsp" >
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-up" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
-  <path fill-rule="evenodd" d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z"/>
-</svg><span class="ml-2">Sign up</span>
-</a>
-</li>
-</c:if>
+<div class="d-none d-md-block">
     
-
+<div class="user d-flex align-items-center p-3">
+<div class="pr-3"><i class="mdi mdi-account-circle-outline text-white h3 mb-0"></i></div>
+<div>
+<p class="mb-0 text-white">Mark Clarke</p>
+<p class="mb-0 text-white-50 small"><a href="https://askbootstrap.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="afcad7cec2dfc3caefc8c2cec6c381ccc0c2">[email&#160;protected]</a></p>
+</div>
+</div>
+</div>
+</li>-->
 
 <li class="nav-item dropdown no-arrow mx-2 osahan-t-pu">
 <a class="nav-link dropdown-toggle text-dark" href="orders.jsp">
@@ -230,6 +220,8 @@
 </a>
 </li>
 </ul>
+    
+       
 
 <div class="ml-auto">
 <form class="d-none d-sm-inline-block form-inline mx-2 my-2 my-md-0 mw-100 navbar-search" action="MainController">
@@ -247,14 +239,300 @@
 <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#cartModal"><i class="mdi mdi-shopping-outline"></i></a>
 </div>
 </nav>
+    
+    
+    <style>
+ .table-responsive {
+        margin: 30px 0;
+    }
+	.table-wrapper {
+        min-width: 1000px;
+        background: #fff;
+        padding: 20px 25px;
+		border-radius: 3px;
+                width: 1440px;
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+	.table-title {
+		    padding-bottom: 15px;
+    background: #c60021;
+    color: white;
+    padding: 16px 30px;
+    margin: -10px -30px 20px;
+    width: 1440px;
+    border-radius: 3px 3px 0 0
+    }
+    .table-title h2 {
+		margin: 5px 0 0;
+		font-size: 24px;
+	}
+	.table-title .btn {
+		color: #566787;
+		float: right;
+		font-size: 13px;
+		background: #fff;
+		border: none;
+		min-width: 50px;
+		border-radius: 2px;
+		border: none;
+		outline: none !important;
+		margin-left: 10px;
+	}
+	.table-title .btn:hover, .table-title .btn:focus {
+        color: #566787;
+       
+	}
+	.table-title .btn i {
+		float: left;
+		font-size: 21px;
+		margin-right: 5px;
+	}
+	.table-title .btn span {
+		float: left;
+		margin-top: 2px;
+	}
+    table.table tr th, table.table tr td {
+        border-color: #e9e9e9;
+		padding: 12px 15px;
+		vertical-align: middle;
+    }
+	table.table tr th:first-child {
+		width: 60px;
+	}
+	table.table tr th:last-child {
+		width: 100px;
+	}
+    table.table-striped tbody tr:nth-of-type(odd) {
+    	/*background-color: ;*/
+	}
+	table.table-striped.table-hover tbody tr:hover {
+		
+	}
+    table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+    }	
+    table.table td:last-child i {
+		opacity: 0.9;
+		font-size: 22px;
+        margin: 0 5px;
+    }
+	table.table td a {
+		font-weight: bold;
+		color: #566787;
+		display: inline-block;
+		text-decoration: none;
+	}
+	table.table td a:hover {
+		color: #2196F3;
+	}
+	table.table td a.settings {
+        color: #2196F3;
+    }
+    table.table td a.delete {
+        color: #F44336;
+    }
+    table.table td i {
+        font-size: 19px;
+    }
+	table.table .avatar {
+		border-radius: 50%;
+		vertical-align: middle;
+		margin-right: 10px;
+	}
+	.status {
+		font-size: 30px;
+		margin: 2px 2px 0 0;
+		display: inline-block;
+		vertical-align: middle;
+		line-height: 10px;
+	}
+        h2 {
+            color: white;
+        }
+        h3 {
+            color:#c60021
+        }
+</style>
+
+<div class="container"> <br></br>
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <h2>Product <b>Management</b></h2>
+                    </div>
+                    <div class="col-xs-7">
+                        <a href="admin.jsp" class="btn btn-primary"><span>Manage Account</span></a>
+                        <!--<a href="#" class="btn btn-primary"> <span>Export to Excel</span></a>-->						
+                    </div>
+                </div>
+            </div>
+            <div>
+            <form action="MainController" method="POST">
+                Search Keyword: <input type="text" name="txtSearchValue" value="" /> 
+                <input type="submit" value="Find" name="btAction" />
+                 <input type="submit" value="SHOWIMG" name="btAction" />
 
 
+            </form>
+           
+        </div><br/>
+        <c:if test="${not empty requestScope.PRO_RESULT}">
+            
+            <table class="table table-striped table-hover">
+                <thead>
+                     <tr>
+                        <th>No.</th>
+                         <th>Image</th>                 
+                        <th>Product Name</th>
+                        <th>description</th>
+                        <th>Year Publish</th>
+                        <th>Price</th>
+                        <th>Category</th> 
+                        <th>Update</th>                     
+                        <th>Delete</th>                     
+                        <th>Details</th>                     
+                    </tr>
+                </thead>
+                 <c:set var="pa" value="${requestScope.PRO_RESULT}"/>
+                <c:forEach var="result" items="${requestScope.PRO_RESULT}" varStatus="counter">
+                     <form action="MainController">
+                <tbody>
+                <style>
+                    img {
+                        width: 60px;
+                        height: 60px;
+                    }
+                </style>
+                    <tr>
+                        <td>
+                                ${counter.count}
+                                .</td>
+                          <td>
+   <img src="data:image/jpg;base64,${result.base64ImageData}" />
+                            </td>
+
+                        <td> <input type="text" name="txtProname" 
+                                       value="${result.proName}" /></td>
+                        <td> 
+                            <input type="text" name="txtProdes" 
+                                       value="${result.description}" /></td>                        
+                        <td>
+                             <input type="number" name="txtYearPublish" 
+                                       value="${result.yearPublish}" /></td>
+                        <td><input type="number" name="txtPrice" 
+                                       value="${result.price}" /></td>
+                        <td>
+                             <input type="text" name="txtCateName" 
+                                       value="${result.catgoryName}" />
+                        </td>
+                      <td>
+                                <input type="hidden" name="txtProID" 
+                                       value="${result.productID}" />
+                                <input type="submit" value="Update Product" name="btAction" />
+                            </td>
+                             <td>
+                                <input type="hidden" name="txtProID" 
+                                       value="${result.productID}" />
+                                <input type="submit" value="Delete Product" name="btAction" />
+                            </td>
+                              <td>
+                                <input type="hidden" name="txtProID" 
+                                       value="${result.productID}" />
+                                <input type="submit" value="Details" name="btAction" />
+
+                            </td>
+                    </tr>
+
+                    </form>
+                 </c:forEach>
+            </tbody>
+        </table>
+
+    </c:if>
+
+
+
+        </div>
+       
+    </div>      
+      <c:if test="${empty requestScope.PRO_RESULT}">
+        <h3>
+            Can't find the match account!!!
+        </h3>
+
+       
+    </c:if>
+</div>    
+    
+    
+    
+
+<!--
 <div class="container-fluid">
 
+<div class="d-flex align-items-center justify-content-between mb-3 mt-2">
+<h5 class="mb-0">Explore categories</h5>
+<a href="listing.jsp" class="small font-weight-bold text-dark">See all <i class="mdi mdi-chevron-right mr-2"></i></a>
+</div>
+
+<div class="row">
+
+<a href="listing.jsp" class="text-decoration-none col-xl-2 col-md-4 mb-4">
+<div class="rounded py-4 bg-white shadow-sm text-center">
+<i class="mdi mdi-fire bg-danger text-white osahan-icon mx-auto rounded-pill"></i>
+<h6 class="mb-1 mt-3">Popular</h6>
+<p class="mb-0 small">286+ options</p>
+</div>
+</a>
+
+<a href="listing.jsp" class="text-decoration-none col-xl-2 col-md-4 mb-4">
+<div class="rounded py-4 bg-white shadow-sm text-center">
+<i class="mdi mdi-motorbike bg-primary text-white osahan-icon mx-auto rounded-pill"></i>
+<h6 class="mb-1 mt-3">Fast Delivery</h6>
+<p class="mb-0 small">1,843+ options</p>
+</div>
+</a>
+
+<a href="listing.jsp" class="text-decoration-none col-xl-2 col-md-4 mb-4">
+<div class="rounded py-4 bg-white shadow-sm text-center">
+<i class="mdi mdi-wallet-outline bg-warning text-white osahan-icon mx-auto rounded-pill"></i>
+<h6 class="mb-1 mt-3">High class</h6>
+<p class="mb-0 small">25+ options</p>
+</div>
+</a>
+
+<a href="listing.jsp" class="text-decoration-none col-xl-2 col-md-4 mb-4">
+<div class="rounded py-4 bg-white shadow-sm text-center">
+<i class="mdi mdi-silverware-variant bg-danger text-white osahan-icon mx-auto rounded-pill"></i>
+<h6 class="mb-1 mt-3">Dine in</h6>
+<p class="mb-0 small">182+ options</p>
+</div>
+</a>
+
+<a href="listing.jsp" class="text-decoration-none col-xl-2 col-md-4 mb-4">
+<div class="rounded py-4 bg-white shadow-sm text-center">
+<i class="mdi mdi-home-variant-outline bg-primary text-white osahan-icon mx-auto rounded-pill"></i>
+<h6 class="mb-1 mt-3">Pick up</h6>
+<p class="mb-0 small">3,548+ options</p>
+</div>
+</a>
+
+<a href="listing.jsp" class="text-decoration-none col-xl-2 col-md-4 mb-4">
+<div class="rounded py-4 bg-white shadow-sm text-center">
+<i class="mdi mdi-map-outline bg-warning text-white osahan-icon mx-auto rounded-pill"></i>
+<h6 class="mb-1 mt-3">Nearest</h6>
+<p class="mb-0 small">44+ options</p>
+</div>
+</a>
+</div>
 
 <div class="d-flex align-items-center justify-content-between mb-3 mt-2">
-<h5 class="mb-0">Restaurants nearby</h5>
-<a href="#" class="small text-dark bg-white shadow-sm px-2 py-1 rounded"><i class="mdi mdi-map-outline mr-2"></i>20 km <i class="ml-1 mdi mdi-chevron-down"></i></a>
+<h5 class="mb-0">Featured restaurants</h5>
+<a href="listing.jsp" class="small font-weight-bold text-dark">See all <i class="mdi mdi-chevron-right mr-2"></i></a>
 </div>
 
 <div class="row">
@@ -272,7 +550,7 @@
 <i class="mdi mdi-currency-inr ml-3"></i> 340/-
 </p>
 <p class="mb-0 text-muted d-flex align-items-center"><span class="badge badge-light"><i class="mdi mdi-truck-fast-outline"></i> Free delivery</span>
-<span class="small ml-auto"><i class="mdi mdi-map-marker"></i> 0.3 km</span>
+ <span class="small ml-auto"><i class="mdi mdi-map-marker"></i> 0.3 km</span>
 </p>
 </div>
 </div>
@@ -322,7 +600,7 @@
 <div class="bg-light p-3 rounded">
 <img src="img/macd.png" class="img-fluid">
 </div>
- <div class="mx-3 py-2 w-100">
+<div class="mx-3 py-2 w-100">
 <p class="mb-2 text-black">Mac Donalds</p>
 <p class="small mb-2">
 <i class="mdi mdi-star text-warning mr-1"></i> <span class="font-weight-bold text-dark">0.5</span> (223)
@@ -374,63 +652,57 @@
 </div>
 
 <div class="d-flex align-items-center justify-content-between mb-3 mt-2">
-<h5 class="mb-0">Popular food</h5>
- <a href="#" class="small text-dark bg-white shadow-sm px-2 py-1 rounded"><i class="fas fa-box-open mr-2"></i>Today <i class="ml-1 mdi mdi-chevron-down"></i></a>
+<h5 class="mb-0">Asian food</h5>
+<a href="listing.jsp" class="small font-weight-bold text-dark">See all <i class="mdi mdi-chevron-right mr-2"></i></a>
 </div>
 
 <div class="row">
 
-<a href="#" class="text-decoration-none text-dark col-xl-4 col-md-12 mb-4" data-toggle="modal" data-target="#myitemsModal">
+<a href="#" class="text-decoration-none col-xl-4 col-md-4 mb-4" data-toggle="modal" data-target="#myitemsModal">
 <img src="img/food1.jpg" class="img-fluid rounded">
-<div class="d-flex align-items-center mt-3 mb-2">
+<div class="d-flex align-items-center mt-3">
 <p class="text-black h6 m-0">Spicy Na Thai Pizza</p>
 <span class="badge badge-light ml-auto"><i class="mdi mdi-truck-fast-outline"></i> Free delivery</span>
 </div>
-<p class="small mb-2"><i class="mdi mdi-star text-warning"></i> <span class="font-weight-bold text-dark ml-1">4.8</span>(1,873) <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> Burger <i class="mdi mdi-motorbike ml-2 mr-2"></i>45 - 55 min</p>
 </a>
-<a href="#" class="text-decoration-none text-dark col-xl-4 col-md-12 mb-4" data-toggle="modal" data-target="#myitemsModal">
+<a href="#" class="text-decoration-none col-xl-4 col-md-4 mb-4" data-toggle="modal" data-target="#myitemsModal">
 <img src="img/food2.jpg" class="img-fluid rounded">
-<div class="d-flex align-items-center mt-3 mb-2">
+<div class="d-flex align-items-center mt-3">
 <p class="text-black h6 m-0">Special Burger</p>
 <span class="badge badge-light ml-auto"><i class="mdi mdi-truck-fast-outline"></i> Free delivery</span>
 </div>
-<p class="small mb-2"><i class="mdi mdi-star text-warning"></i> <span class="font-weight-bold text-dark ml-1">4.8</span>(1,873) <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> Burger <i class="mdi mdi-motorbike ml-2 mr-2"></i>45 - 55 min</p>
 </a>
-<a href="#" class="text-decoration-none text-dark col-xl-4 col-md-12 mb-4" data-toggle="modal" data-target="#myitemsModal">
+<a href="#" class="text-decoration-none col-xl-4 col-md-4 mb-4" data-toggle="modal" data-target="#myitemsModal">
 <img src="img/food3.jpg" class="img-fluid rounded">
-<div class="d-flex align-items-center mt-3 mb-2">
+<div class="d-flex align-items-center mt-3">
 <p class="text-black h6 m-0">Tandoori</p>
 <span class="badge badge-light ml-auto"><i class="mdi mdi-truck-fast-outline"></i> Free delivery</span>
 </div>
-<p class="small mb-2"><i class="mdi mdi-star text-warning"></i> <span class="font-weight-bold text-dark ml-1">4.8</span>(1,873) <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> Burger <i class="mdi mdi-motorbike ml-2 mr-2"></i>45 - 55 min</p>
 </a>
 </div>
 
 <div class="row">
 
-<a href="#" class="text-decoration-none text-dark col-xl-4 col-md-12 mb-4" data-toggle="modal" data-target="#myitemsModal">
+<a href="#" class="text-decoration-none col-xl-4 col-md-4 mb-4" data-toggle="modal" data-target="#myitemsModal">
 <img src="img/food4.jpg" class="img-fluid rounded">
-<div class="d-flex align-items-center mt-3 mb-2">
+<div class="d-flex align-items-center mt-3">
 <p class="text-black h6 m-0">Special Thali</p>
 <span class="badge badge-light ml-auto"><i class="mdi mdi-truck-fast-outline"></i> Free delivery</span>
 </div>
-<p class="small mb-2"><i class="mdi mdi-star text-warning"></i> <span class="font-weight-bold text-dark ml-1">4.8</span>(1,873) <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> Burger <i class="mdi mdi-motorbike ml-2 mr-2"></i>45 - 55 min</p>
 </a>
-<a href="#" class="text-decoration-none text-dark col-xl-4 col-md-12 mb-4" data-toggle="modal" data-target="#myitemsModal">
- <img src="img/food5.jpg" class="img-fluid rounded">
-<div class="d-flex align-items-center mt-3 mb-2">
+<a href="#" class="text-decoration-none col-xl-4 col-md-4 mb-4" data-toggle="modal" data-target="#myitemsModal">
+<img src="img/food5.jpg" class="img-fluid rounded">
+<div class="d-flex align-items-center mt-3">
 <p class="text-black h6 m-0">Diet Food</p>
 <span class="badge badge-light ml-auto"><i class="mdi mdi-truck-fast-outline"></i> Free delivery</span>
 </div>
-<p class="small mb-2"><i class="mdi mdi-star text-warning"></i> <span class="font-weight-bold text-dark ml-1">4.8</span>(1,873) <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> Burger <i class="mdi mdi-motorbike ml-2 mr-2"></i>45 - 55 min</p>
 </a>
-<a href="#" class="text-decoration-none text-dark col-xl-4 col-md-12 mb-4" data-toggle="modal" data-target="#myitemsModal">
+<a href="#" class="text-decoration-none col-xl-4 col-md-4 mb-4" data-toggle="modal" data-target="#myitemsModal">
 <img src="img/food6.jpg" class="img-fluid rounded">
-<div class="d-flex align-items-center mt-3 mb-2">
+<div class="d-flex align-items-center mt-3">
 <p class="text-black h6 m-0">Sandwich</p>
 <span class="badge badge-light ml-auto"><i class="mdi mdi-truck-fast-outline"></i> Free delivery</span>
 </div>
-<p class="small mb-2"><i class="mdi mdi-star text-warning"></i> <span class="font-weight-bold text-dark ml-1">4.8</span>(1,873) <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> Burger <i class="mdi mdi-motorbike ml-2 mr-2"></i>45 - 55 min</p>
 </a>
 </div>
 </div>
@@ -456,7 +728,7 @@
 </a>
 
 <div class="modal fade" id="myitemsModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-<div class="modal-dialog">
+<div class="modal-dialog border-bottom">
 <div class="modal-content osahan-item-detail-pop">
 <div class="modal-header border-0">
 <h5 class="modal-title" id="exampleModalLabel">Rice choice</h5>
@@ -582,7 +854,7 @@
 <a href="#" class="text-dark d-flex align-items-center mb-3" data-toggle="modal" data-target="#myaddressModal">
 <div>
 <p class="mb-0 text-danger">Delivered to</p>
-<p class="mb-0 small">300 Post Street San Francico, CA</p>
+ <p class="mb-0 small">300 Post Street San Francico, CA</p>
 </div>
 <div class="ml-auto">
 <p class="mb-0 text-info">Edit<i class="mdi h6 m-0 mdi-chevron-right"></i></p>
@@ -610,7 +882,7 @@
 </div>
 <div class="d-flex align-items-center mb-3">
 <div class="mr-2"><img src="img/burger2.png" class="img-fluid rounded"></div>
- <div class="small text-black-50">3 x</div>
+<div class="small text-black-50">3 x</div>
 <div class="text-dark ml-2">
 <p class="mb-0 text-black">Osahan Burger</p>
 <p class="mb-0 small">$50</p>
@@ -791,21 +1063,21 @@
 <div class="mr-2"><img src="img/user1.png" class="img-fluid rounded-circle"></div>
 <div class="ml-2">
 <p class="mb-0 text-dark">Kate Simpson</p>
-<span class="mb-0 small text-black-50"><span class="__cf_email__" data-cfemail="9cf7fde8f9eff5f1eceff3f2dcf3e9e8f0f3f3f7b2fff3f1">[email&#160;protected]</span></span>
+<span class="mb-0 small text-black-50"><span class="__cf_email__" data-cfemail="3f545e4b5a4c56524f4c50517f504a4b53505054115c5052">[email&#160;protected]</span></span>
 </div>
 </a>
 <a href="#" data-dismiss="modal" aria-label="Close" class="text-decoration-none d-flex border rounded p-2 bg-light align-items-center mb-2">
 <div class="mr-2"><img src="img/user2.png" class="img-fluid rounded-circle"></div>
 <div class="ml-2">
 <p class="mb-0 text-dark">Andrew smith</p>
-<span class="mb-0 small text-black-50"><span class="__cf_email__" data-cfemail="46272822342331062933326825292b">[email&#160;protected]</span></span>
+<span class="mb-0 small text-black-50"><span class="__cf_email__" data-cfemail="92f3fcf6e0f7e5d2fde7e6bcf1fdff">[email&#160;protected]</span></span>
 </div>
 </a>
 <a href="#" data-dismiss="modal" aria-label="Close" class="text-decoration-none d-flex border rounded p-2 bg-light align-items-center mb-2">
 <div class="mr-2"><img src="img/user3.png" class="img-fluid rounded-circle"></div>
 <div class="ml-2">
 <p class="mb-0 text-dark">Gurdeep Osahan</p>
-<span class="mb-0 small text-black-50"><span class="__cf_email__" data-cfemail="4d242c20223e2c252c230d223839632e2220">[email&#160;protected]</span></span>
+<span class="mb-0 small text-black-50"><span class="__cf_email__" data-cfemail="234a424e4c50424b424d634c56570d404c4e">[email&#160;protected]</span></span>
 </div>
 </a>
 </div>
@@ -827,7 +1099,7 @@
 </div>
 <div class="modal-body">
 <ul class="nav nav-tabs border-0 mb-3" id="myTab" role="tablist">
-<li class="nav-item" role="presentation">
+ <li class="nav-item" role="presentation">
 <a class="nav-link active border-0 bg-primary text-white rounded small" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home (2)</a>
 </li>
 <li class="nav-item" role="presentation">
@@ -875,15 +1147,25 @@
 </div>
 </div>
 </div>
+-->
 
-<script data-cfasync="false" src="js/email-decode.min.js"></script><script src="vendor/jquery/jquery.min.js" type="987d8b25b062cae35c7409fc-text/javascript"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="987d8b25b062cae35c7409fc-text/javascript"></script>
 
-<script src="vendor/jquery-easing/jquery.easing.min.js" type="987d8b25b062cae35c7409fc-text/javascript"></script>
 
-<script src="js/osahan.min.js" type="987d8b25b062cae35c7409fc-text/javascript"></script>
-<script src="js/rocket-loader.min.js" data-cf-settings="987d8b25b062cae35c7409fc-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"75c6f93bb8fa7d56","version":"2022.10.3","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+
+
+
+
+<script data-cfasync="false" src="js/email-decode.min.js"></script><script src="vendor/jquery/jquery.min.js" type="4673c51028ea841130b80adc-text/javascript"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="4673c51028ea841130b80adc-text/javascript"></script>
+
+<script src="vendor/jquery-easing/jquery.easing.min.js" type="4673c51028ea841130b80adc-text/javascript"></script>
+
+<script src="js/osahan.min.js" type="4673c51028ea841130b80adc-text/javascript"></script>
+<script src="js/rocket-loader.min.js" data-cf-settings="4673c51028ea841130b80adc-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"75c6f9299e967d56","version":"2022.10.3","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+
+
+
 </body>
 
-<!-- Mirrored from askbootstrap.com/preview/osahan-eat/theme-sidebar/explore.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Oct 2022 05:04:56 GMT -->
+ <!--Mirrored from askbootstrap.com/preview/osahan-eat/theme-sidebar/index.html?fbclid=IwAR0nwIFNYzgqHa21f49Nzv1kLbeDTnnIQIEIfRudCclQdwQMDTmsCY1Ovq4 by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Oct 2022 05:04:46 GMT--> 
 </html>

@@ -2,6 +2,25 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/E:/swp391/Morza/src/java/controller/ProductListController.java</file>
+            <file>file:/E:/swp391/Morza/web/searchProduct.jsp</file>
+            <file>file:/E:/swp391/Morza/web/messages.jsp</file>
+            <file>file:/E:/swp391/Morza/src/java/dao/ProductDAO.java</file>
+            <file>file:/E:/swp391/Morza/web/signin.jsp</file>
+            <file>file:/E:/swp391/Morza/src/java/controller/MainController.java</file>
+            <file>file:/E:/swp391/Morza/web/search.jsp</file>
+            <file>file:/E:/swp391/Morza/web/favourities.jsp</file>
+            <file>file:/E:/swp391/Morza/src/java/controller/ManageProductController.java</file>
+            <file>file:/E:/swp391/Morza/web/loginHomePage.jsp</file>
+            <file>file:/E:/swp391/Morza/web/listing1.jsp</file>
+            <file>file:/E:/swp391/Morza/web/adminSearchProduct.jsp</file>
+            <file>file:/E:/swp391/Morza/web/testUpdate.jsp</file>
+            <file>file:/E:/swp391/Morza/src/java/controller/SearchProductAController.java</file>
+            <file>file:/E:/swp391/Morza/web/listing.jsp</file>
+            <file>file:/E:/swp391/Morza/web/settings.jsp</file>
+            <file>file:/E:/swp391/Morza/web/orders.jsp</file>
+            <file>file:/E:/swp391/Morza/web/forgot.jsp</file>
+        </group>
     </open-files>
 </project-private>

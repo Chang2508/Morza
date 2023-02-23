@@ -232,18 +232,17 @@
 </ul>
 
 <div class="ml-auto">
-<a href="search.jsp">
-<form class="d-none d-sm-inline-block form-inline mx-2 my-2 my-md-0 mw-100 navbar-search">
+<form class="d-none d-sm-inline-block form-inline mx-2 my-2 my-md-0 mw-100 navbar-search" action="MainController">
 <div class="input-group">
-<input type="text" class="form-control bg-light" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+<input type="text" class="form-control bg-light text-dark font-weight-bold" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" name="txtSearchValue" value="">
 <div class="input-group-append">
-<button class="btn btn-primary" type="button">
-<i class="mdi mdi-magnify"></i>
-</button>
+<input class="btn btn-primary" type="submit" value="Find Product" name="btAction" >
+<!--<input type="submit" value="Find Product" name="btAction" />-->
+<!--<i class="mdi mdi-magnify"></i>-->
+<!--</button>-->
 </div>
 </div>
 </form>
-</a>
 <a href="#" class="btn btn-primary " data-toggle="modal" data-target="#filtersModal"><i class="mdi mdi-filter-variant"></i></a>
 <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#cartModal"><i class="mdi mdi-shopping-outline"></i></a>
 </div>
@@ -258,6 +257,27 @@
 
 <div class="row">
 
+     <c:set var="context" value="${pageContext.request.contextPath}" />
+    <c:if test="${not empty requestScope.PRO_RESULT}">
+<c:set var="pa" value="${requestScope.PRO_RESULT}"/>
+                <c:forEach var="result" items="${requestScope.PRO_RESULT}" varStatus="counter">
+                    <!--<form action="MainController">-->
+<a href="#" class="text-decoration-none text-dark col-lg-3 col-md-6 mb-4" data-toggle="modal" data-target="#myitemsModal">
+    <img src="data:image/jpg;base64,${result.base64ImageData}"  width="200px" height="200px"/>
+    
+<div class="d-flex align-items-center mt-3 mb-2">
+<p class="text-black h6 m-0">${result.proName}</p>
+<!--<input class="text-black h6 m-0" type="text" name="txtProname" value="${result.proName}" />-->
+<span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${result.price}</span>
+</div>
+<p class="small mb-2"><i class="mdi mdi-star text-warning"></i> <span class="font-weight-bold text-dark ml-1">4.8</span>(1,873) <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> ${result.catgoryName} <i class="mdi mdi-motorbike ml-2 mr-2"></i>Freeship</p>
+</a>
+    <!--</form>-->
+</c:forEach>
+</c:if>
+    
+    
+<!--    
 <a href="#" class="text-decoration-none text-dark col-lg-3 col-md-6 mb-4" data-toggle="modal" data-target="#myitemsModal">
 <img src="img/food1.jpg" class="img-fluid rounded">
 <div class="d-flex align-items-center mt-3 mb-2">
@@ -804,7 +824,7 @@
 </div>
 </div>
 </div>
-</div>
+</div>-->
 
 <script data-cfasync="false" src="js/email-decode.min.js"></script><script src="vendor/jquery/jquery.min.js" type="86c5413ccc150e991645c889-text/javascript"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="86c5413ccc150e991645c889-text/javascript"></script>
