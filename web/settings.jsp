@@ -326,6 +326,7 @@
        
 <div class="modal fade" id="personalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
+    <form action="UpdateAccountController">
 <div class="modal-content">
 <div class="modal-header">
 <h5 class="modal-title" id="exampleModalLabel">Personal Information</h5>
@@ -347,28 +348,28 @@
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Username</p>
 <p class="form-control form-control-sm p-0 border-input border-0 rounded-0">${sessionScope.username}</p>
-<input name="txtUsername" type="hidden" value="${account.username}" class="form-control form-control-sm p-0 border-input border-0 rounded-0">
+<input name="txtUsername" type="hidden" value="${acc.username}" class="form-control form-control-sm p-0 border-input border-0 rounded-0">
 </div>
 </div>
 <div class="d-flex align-items-center mb-3">
 <div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-account-outline"></i></div>
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Password</p>
-<input name="txtPassword" type="password" value="${account.password}" class="form-control form-control-sm p-0 border-input border-0 rounded-0" ">
+<input name="txtPassword" type="password" value="${sessionScope.password}" class="form-control form-control-sm p-0 border-input border-0 rounded-0" ">
 </div>
 </div>
 <div class="d-flex align-items-center mb-3">
 <div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="fas fa-phone-alt"></i></div>
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Phone Number</p>
-<input name="txtPhoneNum" type="text" value="${account.phoneNum}" class="form-control form-control-sm p-0 border-input border-0 rounded-0"">
+<input name="txtPhoneNum" type="text" value="${sessionScope.phoneNum}" class="form-control form-control-sm p-0 border-input border-0 rounded-0"">
 </div>
 </div>
 <div class="d-flex align-items-center mb-3">
 <div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-account-outline"></i></div>
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Full name</p>
-<input name="txtCustName" type="text" value="${account.custName}" class="form-control form-control-sm p-0 border-input border-0 rounded-0"">
+<input name="txtCustName" type="text" value="${sessionScope.custName}" class="form-control form-control-sm p-0 border-input border-0 rounded-0"">
 </div>
 </div>
 <div class="d-flex align-items-center mb-3">
@@ -376,7 +377,7 @@
 </div>
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Email</p>
-<input name="txtEmail" type="text" value="${account.email}" class="form-control form-control-sm p-0 border-input border-0 rounded-0" ">
+<input name="txtEmail" type="text" value="${sessionScope.email}" class="form-control form-control-sm p-0 border-input border-0 rounded-0" ">
 </div>
 </div>
 <div class="d-flex align-items-center mb-3">
@@ -384,7 +385,7 @@
 </div>
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Address</p>
-<input name="txtAddress" type="text" value="${account.address}" class="form-control form-control-sm p-0 border-input border-0 rounded-0" >
+<input name="txtAddress" type="text" value="${sessionScope.address}" class="form-control form-control-sm p-0 border-input border-0 rounded-0" >
 </div>
 </div>
 </div>
@@ -393,6 +394,7 @@
 <input type="submit" value="Update profile" name="" data-dismiss="modal" aria-label="Close" class="btn btn-primary btn-block"/>
 </div>
 </div>
+</form>
 </div>
 </div>
 </form>

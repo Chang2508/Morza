@@ -205,7 +205,7 @@ public class ProductDAO implements Serializable{
                 //2. Create sql string
 
                 String sql = "select p.productID , i.filename, i.picdata, i.picID \n"
-                        + "FROM Product p full JOIN  Picture i ON p.picID = i.picID  \n";
+                        + "FROM Product p inner JOIN  Picture i ON p.picID = i.picID  \n";
                 //3. Create statement
                 stm = con.prepareStatement(sql);
                 

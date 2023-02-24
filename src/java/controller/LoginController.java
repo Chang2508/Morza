@@ -80,6 +80,10 @@ public class LoginController extends HttpServlet {
                     session.setAttribute("phoneNum", dao.getPhoneNum(username));
                     session.setAttribute("email", dao.getEmail(username));
                     session.setAttribute("address", dao.getAddress(username));
+//                    
+            
+           
+                request.setAttribute("customer", dao.getAccountByUserName(username));
                 } else {
                     errors.setErrorMsg("Wrong username or password! Please check again...");
                     isError = true;

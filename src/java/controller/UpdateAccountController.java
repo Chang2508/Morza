@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dao.CustomerDAO;
 import dto.CustomerDTO;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -54,18 +55,18 @@ public class UpdateAccountController extends HttpServlet {
             //1. call DAO
             CustomerDAO dao = new CustomerDAO();
             CustomerDTO customer = dao.getAccountByUserName(username);
-            
-           
-                request.setAttribute("customer", customer);
+             dao.updateAccount(customer);
+            HttpSession session = request.getSession();
+                session.setAttribute("customer", customer);
 
-            
+           
  
         }catch (NamingException ex) {
              log("ShowItemsServlet _ Naming _ " + ex.getMessage());
         } catch (SQLException ex) {
             log("ShowItemsServlet _ SQL _ " + ex.getMessage());
         } finally {
-            RequestDispatcher rd = request.getRequestDispatcher("testUpdate.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("settings.jsp");
             rd.forward(request, response);
         }
     }
