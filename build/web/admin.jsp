@@ -377,6 +377,13 @@
             </form>
            
         </div><br/>
+        <c:if test="${empty requestScope.ACC_RESULT}">
+        <h3>
+            Can't find the match account!!!
+        </h3>
+
+       
+    </c:if>
         <c:if test="${not empty requestScope.ACC_RESULT}">
             
             <table class="table table-striped table-hover">
@@ -443,13 +450,7 @@ ${result.email}
         </div>
        
     </div>      
-      <c:if test="${empty requestScope.ACC_RESULT}">
-        <h3>
-            Can't find the match account!!!
-        </h3>
-
-       
-    </c:if>
+      
 </div>    
     
     
