@@ -258,23 +258,79 @@
 <div class="row">
 
      <c:set var="context" value="${pageContext.request.contextPath}" />
-    <c:if test="${not empty requestScope.PRO_RESULT}">
-<c:set var="pa" value="${requestScope.PRO_RESULT}"/>
-                <c:forEach var="result" items="${requestScope.PRO_RESULT}" varStatus="counter">
-                    <!--<form action="MainController">-->
-<a href="#" class="text-decoration-none text-dark col-lg-3 col-md-6 mb-4" data-toggle="modal" data-target="#myitemsModal">
-    <img src="data:image/jpg;base64,${result.base64ImageData}"  width="200px" height="200px"/>
-    
-<div class="d-flex align-items-center mt-3 mb-2">
-<p class="text-black h6 m-0">${result.proName}</p>
-<!--<input class="text-black h6 m-0" type="text" name="txtProname" value="${result.proName}" />-->
-<span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${result.price}</span>
-</div>
-<p class="small mb-2"><i class="mdi mdi-star text-warning"></i> <span class="font-weight-bold text-dark ml-1">4.8</span>(1,873) <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> ${result.catgoryName} <i class="mdi mdi-motorbike ml-2 mr-2"></i>Freeship</p>
-</a>
-    <!--</form>-->
-</c:forEach>
+<%--<c:if test="${not empty requestScope.IMG_RESULT}">--%>
+<c:if test="${not empty requestScope.IMG_RESULT}" >
+  <%--<c:set var="pa" value="${requestScope.IMG_RESULT}"/>--%>
+  <div class="product-container">
+   <c:forEach var="img" items="${requestScope.IMG_RESULT}">
+      <form action="listProduct">
+        <a href="#" class="text-decoration-none text-dark col-lg-3 col-md-6 mb-4" data-toggle="modal" data-target="#myitemsModal">
+         <img src="data:image/jpg    ;base64,${img.base64ImageData}"  width="200px" height="200px"/>
+          <div class="d-flex align-items-center mt-3 mb-2">
+            <p class="text-black h6 m-0">${img.proName}</p>
+            <!--<span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${img.price}</span>-->
+          </div>
+          <p class="small mb-2"><span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${img.price}</span> <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> ${img.catgoryName} <i class="mdi mdi-motorbike ml-2 mr-2"></i>Freeship</p>
+        </a>
+      </form>
+      <c:if test="${counter.index % 3 == 2}">
+        </div><div class="product-container">
+      </c:if>
+    </c:forEach>
+  </div>
 </c:if>
+ <c:if test="${ empty requestScope.IMG_RESULT}">
+         <h3>
+            Can't find the match account!!!
+        </h3>
+    </c:if>
+<style>
+    .product-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-container > form {
+  width: 33.33%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  float: left;
+}
+</style>
+   
+<!--      <c:set var="context" value="${pageContext.request.contextPath}" />
+        <h1>Hello World!</h1>
+        <div>
+            <form action="listProduct" method="POST">
+                Search Keyword: <input type="text" name="txtSearchValue" value="" /> 
+                <input type="submit" value="Find Product" name="btAction" />
+                <input type="submit" value="SHOWIMG" name="btAction" />
+                    
+
+            </form>
+        </div>-->
+
+        
+<!--        
+    <c:if test="${not empty requestScope.IMG_RESULT}" >
+        <table border="1">
+            <c:forEach var="img" items="${requestScope.IMG_RESULT}">
+                <form action="listProduct">
+                    <tr>
+                        <td><img src="data:image/jpg    ;base64,${img.base64ImageData}" /> </td>
+                    </tr>
+                    
+                </form>
+                    
+            
+                
+            </c:forEach>
+            <h1>ALO</h1>
+        </table>
+        
+    </c:if>
+   -->
     
     
 <!--    
@@ -383,7 +439,7 @@
 <p class="small mb-2"><i class="mdi mdi-star text-warning"></i> <span class="font-weight-bold text-dark ml-1">4.8</span>(1,873) <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> Burger <i class="mdi mdi-motorbike ml-2 mr-2"></i>45 - 55 min</p>
 </a>
 </div>
-</div>
+</div>-->
 
 </div>
 
@@ -824,7 +880,7 @@
 </div>
 </div>
 </div>
-</div>-->
+</div>
 
 <script data-cfasync="false" src="js/email-decode.min.js"></script><script src="vendor/jquery/jquery.min.js" type="86c5413ccc150e991645c889-text/javascript"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="86c5413ccc150e991645c889-text/javascript"></script>

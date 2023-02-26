@@ -357,4 +357,56 @@ public class ProductDAO implements Serializable{
         }
         return result;
     }
+        
+        public void showIMG_1()
+            throws SQLException, NamingException {
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        try {
+            //1. Get connection
+            con = DBHelper.makeConnection();
+            if (con != null) {
+                //2. Create sql string
+
+                String sql = "select * \n"
+                        + "FROM Product p inner JOIN  Picture i ON p.picID = i.picID  inner JOIN Category c ON p.CategoryID = c.CategoryID\n";
+                //3. Create statement
+                stm = con.prepareStatement(sql);
+                
+                //4. Execute Query
+                rs = stm.executeQuery();
+                //5. Process result
+                while (rs.next()) {
+                    //get field/column
+                    String productID = rs.getString("productID");
+                    String proName = rs.getString("proName");
+                    String description = rs.getString("description");
+                    int yearPublish = rs.getInt("yearPublish");
+                    float price = rs.getFloat("price");
+                    String catgoryName = rs.getString("catgoryName");
+                    byte[] picData = rs.getBytes("picdata");
+                    String picID = rs.getString("picID");
+
+                    //Create DTO instance
+                    ProductDTO dto = new ProductDTO(productID, proName, description, yearPublish, price, catgoryName, picID, picData);
+                    //add to bookList
+                    if (this.itemsList == null) {
+                        this.itemsList = new ArrayList<>();
+                    }//end bookList is not existed
+                    this.itemsList.add(dto);
+                }//end bookList is traversed
+            }//end con is available
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+    }
 }

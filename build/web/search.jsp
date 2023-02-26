@@ -87,7 +87,7 @@
 <div class="bg-white py-2 collapse-inner rounded">
 <h6 class="collapse-header">Pages:</h6>
 <a class="collapse-item" href="detail.jsp">Details</a>
-<a class="collapse-item" href="listing.jsp">Listing</a>
+<a class="collapse-item" href="listProduct">Listing</a>
 <a class="collapse-item" href="messages.jsp">Messages</a>
 <a class="collapse-item" href="search.jsp">Search</a>
 <a class="collapse-item" href="buttons.jsp">Components</a>
@@ -332,26 +332,67 @@
 
     
 <!--<div class="row">-->
-    <c:set var="context" value="${pageContext.request.contextPath}" />
+<!--    <c:set var="context" value="${pageContext.request.contextPath}" />
     <c:if test="${not empty requestScope.PRO_RESULT}">
 <c:set var="pa" value="${requestScope.PRO_RESULT}"/>
                 <c:forEach var="result" items="${requestScope.PRO_RESULT}" varStatus="counter">
+                    <
                     <form action="MainController">
 <a href="#" class="text-decoration-none text-dark col-lg-3 col-md-6 mb-4" data-toggle="modal" data-target="#myitemsModal">
     <img src="data:image/png;base64,${result.base64ImageData}"  width="200px" height="200px"/>
     
 <div class="d-flex align-items-center mt-3 mb-2">
 <p class="text-black h6 m-0">${result.proName}</p>
-<!--<input class="text-black h6 m-0" type="text" name="txtProname" value="${result.proName}" />-->
+<input class="text-black h6 m-0" type="text" name="txtProname" value="${result.proName}" />
 <span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${result.price}</span>
 </div>
-<p class="small mb-2"><i class="mdi mdi-star text-warning"></i> <span class="font-weight-bold text-dark ml-1">4.8</span>(1,873) <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> ${result.catgoryName} <i class="mdi mdi-motorbike ml-2 mr-2"></i>Freeship</p>
+<p class="small mb-2"><span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${result.price}</span> <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> ${result.catgoryName} <i class="mdi mdi-motorbike ml-2 mr-2"></i>Freeship</p>
 </a>
     </form>
 </c:forEach>
 </c:if>
-   
+    -->
     
+    <c:set var="context" value="${pageContext.request.contextPath}" />
+<c:if test="${not empty requestScope.PRO_RESULT}">
+  <c:set var="pa" value="${requestScope.PRO_RESULT}"/>
+  <div class="product-container">
+    <c:forEach var="result" items="${requestScope.PRO_RESULT}" varStatus="counter">
+      <form action="MainController">
+        <a href="#" class="text-decoration-none text-dark col-lg-3 col-md-6 mb-4" data-toggle="modal" data-target="#myitemsModal">
+          <img src="data:image/png;base64,${result.base64ImageData}"  width="200px" height="200px"/>
+          <div class="d-flex align-items-center mt-3 mb-2">
+            <p class="text-black h6 m-0">${result.proName}</p>
+            <!--<span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${result.price}</span>-->
+          </div>
+          <p class="small mb-2"><span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${result.price}</span> <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> ${result.catgoryName} <i class="mdi mdi-motorbike ml-2 mr-2"></i>Freeship</p>
+        </a>
+      </form>
+      <c:if test="${counter.index % 3 == 2}">
+        </div><div class="product-container">
+      </c:if>
+    </c:forEach>
+  </div>
+</c:if>
+<%--<c:if test="${ empty requestScope.IMG_RESULT}">
+         <h3>
+            Can't find the match account!!!
+        </h3>
+    </c:if>--%>
+<style>
+    .product-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-container > form {
+  width: 33.33%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  float: left;
+}
+</style>
     
 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
@@ -496,7 +537,7 @@
 </div>
 </div>
 <div class="modal-footer justify-content-start">
-<a href="listing.jsp" class="btn btn-primary btn-block mt-2">Apply filters</a>
+<a href="listProduct" class="btn btn-primary btn-block mt-2">Apply filters</a>
 </div>
 </div>
 </div>

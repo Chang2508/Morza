@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,70 +35,110 @@
 </div>
 <div class="col-md-6 d-flex justify-content-center flex-column px-0">
 <div class="col-lg-6 mx-auto">
+     
 <h3 class="mb-1">Create an account</h3>
 <p class="mb-5">Please create an account to continue using our service</p>
- <form action="CreateNewAccountController" method="post">
+ <form action="MainController" method="post">
+     <c:set var="errors" value="${requestScope.CREATE_ERROR}"/>
 <div class="d-flex align-items-center mb-4">
 <div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-account-outline"></i></div>
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Username (6-30 chars)</p>
-<input type="text" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Name" name="txtUsername">
+<input type="text" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Username" name="txtUsername">
 </div>
 </div>
+ <c:if test="${not empty errors.usernameLengthErr}">
+                <font color='red'>
+                    ${errors.usernameLengthErr}
+                </font><br/>
+            </c:if>
 <div class="d-flex align-items-center mb-4">
-<div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-email-outline"></i></div>
+<div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-form-textbox-password"></i></div>
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Password* (6-20 chars)</p>
-<input type="password" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Email" name="txtPassword">
+<input type="password" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Password" name="txtPassword">
 </div>
 </div>
+                 <c:if test="${not empty errors.passwordLengthErr}">
+                <font color='red'>
+                    ${errors.passwordLengthErr}
+                </font><br/>
+            </c:if>
 <div class="d-flex align-items-center mb-4">
 <div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-form-textbox-password"></i></div>
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Confirm password*</p>
-<input type="password" name="txtConfirm" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Password">
+<input type="password" name="txtConfirm" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Confirm Your Password">
 </div>
 </div>
-     
+    <c:if test="${not empty errors.confirmNotMatchErr}">
+                <font color='red'>
+                    ${errors.confirmNotMatchErr}
+                </font><br/>
+            </c:if>  
 
      
      <div class="d-flex align-items-center mb-4">
-<div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-form-textbox-password"></i></div>
+<div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-form-textbox"></i></div>
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Fullname (2-50 chars)</p>
-<input type="text" name="txtFullname" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Password">
+<input type="text" name="txtFullname" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Fullname">
 </div>
 </div>
-     
+     <c:if test="${not empty errors.fullnameLengthErr}">
+                <font color='red'>
+                    ${errors.fullnameLengthErr}
+                </font><br/>
+            </c:if>
      <div class="d-flex align-items-center mb-4">
-<div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-form-textbox-password"></i></div>
+<div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-map-marker-outline"></i></div>
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Address</p>
-<input type="text" name="txtAddress" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Password">
+<input type="text" name="txtAddress" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Address">
 </div>
 </div>
      
           <div class="d-flex align-items-center mb-4">
-<div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-form-textbox-password"></i></div>
+<div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-phone-dial"></i></div>
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Phone number</p>
-<input type="text" name="txtPhoneNum" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Password">
+<input type="text" name="txtPhoneNum" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Phone Number">
 </div>
 </div>
-     
+      <c:if test="${not empty errors.phoneNumLengthErr}">
+                <font color='red'>
+                    ${errors.phoneNumLengthErr}
+                </font><br/>
+            </c:if>
      <div class="d-flex align-items-center mb-4">
-<div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-form-textbox-password"></i></div>
+<div class="mr-3 bg-light rounded p-2 osahan-icon"><i class="mdi mdi-email-outline"></i></i></div>
 <div class="w-100">
 <p class="mb-0 small font-weight-bold text-dark">Email</p>
-<input type="text" name="txtEmail" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Password">
+<input type="text" name="txtEmail" class="form-control form-control-sm p-0 border-input border-0 rounded-0" placeholder="Enter Your Email">
 </div>
 </div>
-      <button type="submit" class="btn btn-primary" name="btAction">Sign up</button>
-     
+                 <c:if test="${not empty errors.emailSyntaxErr}">
+                <font color='red'>
+                    ${errors.emailSyntaxErr}
+                </font><br/>
+            </c:if>
+      <!--<button type="submit" class="btn btn-primary" name="btAction">Sign up</button>-->
+      <input type="submit" class="btn btn-primary" name="btAction" value="Sign up"/>
 <div class="mb-3">
 <!--<a href="index.jsp" class="btn btn-primary btn-block mb-3">Create an account</a>-->
 <p class="text-center">Already have an account? <a href="signin.jsp" class="text-danger text-decoration-none">Sign in</a></p>
+<p class="text-center">Return <a href="index.jsp" class="text-danger text-decoration-none">Home Page</a>
 </div>
+        <c:if test="${not empty errors.usernameExisted}">
+                <font color='red'>
+                    ${errors.usernameExisted}
+                </font><br/>
+            </c:if>
+            <c:if test="${not empty errors.errorMsg}">
+                <font color='red'>
+                    ${errors.errorMsg}
+                </font><br/>
+            </c:if>
 </form>
 </div>
 </div>

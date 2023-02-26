@@ -86,16 +86,16 @@
 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 <div class="bg-white py-2 collapse-inner rounded">
 <h6 class="collapse-header">Pages:</h6>
-<a class="collapse-item" href="detail.html">Details</a>
-<a class="collapse-item" href="listing.html">Listing</a>
-<a class="collapse-item" href="messages.html">Messages</a>
-<a class="collapse-item" href="search.html">Search</a>
-<a class="collapse-item" href="buttons.html">Components</a>
-<a class="collapse-item" href="404.html">Page Not Found</a>
+<a class="collapse-item" href="detail.jsp">Details</a>
+<a class="collapse-item" href="listProduct">Listing</a>
+<a class="collapse-item" href="messages.jsp">Messages</a>
+<a class="collapse-item" href="search.jsp">Search</a>
+<a class="collapse-item" href="buttons.jsp">Components</a>
+<a class="collapse-item" href="404.jsp">Page Not Found</a>
 <h6 class="collapse-header">Account:</h6>
-<a class="collapse-item" href="signin.html">Signin</a>
-<a class="collapse-item" href="signup.html">Signup</a>
-<a class="collapse-item" href="forgot.html">Forgot Password</a>
+<a class="collapse-item" href="signin.jsp">Signin</a>
+<a class="collapse-item" href="signup.jsp">Signup</a>
+<a class="collapse-item" href="forgot.jsp">Forgot Password</a>
 </div>
 </div>
 </li>
@@ -217,7 +217,7 @@
 </li>-->
 
 <li class="nav-item dropdown no-arrow mx-2 osahan-t-pu">
-<a class="nav-link dropdown-toggle text-dark" href="orders.html">
+<a class="nav-link dropdown-toggle text-dark" href="orders.jsp">
 <i class="mdi mdi-shopping text-danger"></i><span class="ml-2">Pick up</span>
 </a>
 </li>
@@ -253,7 +253,7 @@
 <div class="error mx-auto mt-lg-5 pt-lg-5" data-text="404">404</div>
 <p class="lead text-gray-800 mb-5">Page Not Found</p>
 <p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
-<a href="index.html">&larr; Back to Dashboard</a>
+<a href="index.jsp">&larr; Back to Dashboard</a>
 </div>
 </div>
 
@@ -340,7 +340,7 @@
 </div>
 </div>
 <div class="modal-footer justify-content-start">
-<a href="listing.html" class="btn btn-primary btn-block mt-2">Apply filters</a>
+<a href="listProduct" class="btn btn-primary btn-block mt-2">Apply filters</a>
 </div>
 </div>
 </div>
@@ -476,7 +476,7 @@
 <a href="#" data-toggle="modal" data-target="#paymentsModal" class="btn btn-light btn-block"><i class="mdi mdi-plus"></i> Add</a>
 </div>
 <div class="modal-footer justify-content-start">
-<a href="orders.html" class="btn btn-primary btn-block">Confirm payment ($53.00)</a>
+<a href="orders.jsp" class="btn btn-primary btn-block">Confirm payment ($53.00)</a>
 </div>
 </div>
 </div>

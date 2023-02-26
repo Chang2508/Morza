@@ -87,7 +87,7 @@
 <div class="bg-white py-2 collapse-inner rounded">
 <h6 class="collapse-header">Pages:</h6>
 <a class="collapse-item" href="detail.jsp">Details</a>
-<a class="collapse-item" href="listing.jsp">Listing</a>
+<a class="collapse-item" href="listProduct">Listing</a>
 <a class="collapse-item" href="messages.jsp">Messages</a>
 <a class="collapse-item" href="search.jsp">Search</a>
 <a class="collapse-item" href="buttons.jsp">Components</a>
@@ -1109,7 +1109,7 @@ styling, but it is not required.
 </div>
 </div>
 <div class="modal-footer justify-content-start">
-<a href="listing.jsp" class="btn btn-primary btn-block mt-2">Apply filters</a>
+<a href="listProduct" class="btn btn-primary btn-block mt-2">Apply filters</a>
 </div>
 </div>
 </div>

@@ -86,7 +86,7 @@
 <div class="bg-white py-2 collapse-inner rounded">
 <h6 class="collapse-header">Pages:</h6>
 <a class="collapse-item" href="detail.jsp">Details</a>
-<a class="collapse-item" href="listing.jsp">Listing</a>
+<a class="collapse-item" href="listProduct">Listing</a>
 <a class="collapse-item" href="messages.jsp">Messages</a>
 <a class="collapse-item" href="search.jsp">Search</a>
 <a class="collapse-item" href="buttons.jsp">Components</a>
@@ -240,12 +240,12 @@
 
 <div class="d-flex align-items-center justify-content-between mb-3 mt-2">
 <h5 class="mb-0">Explore categories</h5>
-<a href="listing.jsp" class="small font-weight-bold text-dark">See all <i class="mdi mdi-chevron-right mr-2"></i></a>
+<a href="listProduct" class="small font-weight-bold text-dark">See all <i class="mdi mdi-chevron-right mr-2"></i></a>
 </div>
 
 <div class="row">
 
-<a href="listing.jsp" class="text-decoration-none col-xl-2 col-md-4 mb-4">
+<a href="listProduct" class="text-decoration-none col-xl-2 col-md-4 mb-4">
 <div class="rounded py-4 bg-white shadow-sm text-center">
 <i class="mdi mdi-fire bg-danger text-white osahan-icon mx-auto rounded-pill"></i>
 <h6 class="mb-1 mt-3">Popular</h6>
@@ -253,7 +253,7 @@
 </div>
 </a>
 
-<a href="listing.jsp" class="text-decoration-none col-xl-2 col-md-4 mb-4">
+<a href="listProduct" class="text-decoration-none col-xl-2 col-md-4 mb-4">
 <div class="rounded py-4 bg-white shadow-sm text-center">
 <i class="mdi mdi-motorbike bg-primary text-white osahan-icon mx-auto rounded-pill"></i>
 <h6 class="mb-1 mt-3">Fast Delivery</h6>
@@ -261,7 +261,7 @@
 </div>
 </a>
 
-<a href="listing.jsp" class="text-decoration-none col-xl-2 col-md-4 mb-4">
+<a href="listProduct" class="text-decoration-none col-xl-2 col-md-4 mb-4">
 <div class="rounded py-4 bg-white shadow-sm text-center">
 <i class="mdi mdi-wallet-outline bg-warning text-white osahan-icon mx-auto rounded-pill"></i>
 <h6 class="mb-1 mt-3">High class</h6>
@@ -269,7 +269,7 @@
 </div>
 </a>
 
-<a href="listing.jsp" class="text-decoration-none col-xl-2 col-md-4 mb-4">
+<a href="listProduct" class="text-decoration-none col-xl-2 col-md-4 mb-4">
 <div class="rounded py-4 bg-white shadow-sm text-center">
 <i class="mdi mdi-silverware-variant bg-danger text-white osahan-icon mx-auto rounded-pill"></i>
 <h6 class="mb-1 mt-3">Dine in</h6>
@@ -277,7 +277,7 @@
 </div>
 </a>
 
-<a href="listing.jsp" class="text-decoration-none col-xl-2 col-md-4 mb-4">
+<a href="listProduct" class="text-decoration-none col-xl-2 col-md-4 mb-4">
 <div class="rounded py-4 bg-white shadow-sm text-center">
 <i class="mdi mdi-home-variant-outline bg-primary text-white osahan-icon mx-auto rounded-pill"></i>
 <h6 class="mb-1 mt-3">Pick up</h6>
@@ -285,7 +285,7 @@
 </div>
 </a>
 
-<a href="listing.jsp" class="text-decoration-none col-xl-2 col-md-4 mb-4">
+<a href="listProduct" class="text-decoration-none col-xl-2 col-md-4 mb-4">
 <div class="rounded py-4 bg-white shadow-sm text-center">
 <i class="mdi mdi-map-outline bg-warning text-white osahan-icon mx-auto rounded-pill"></i>
 <h6 class="mb-1 mt-3">Nearest</h6>
@@ -296,7 +296,7 @@
 
 <div class="d-flex align-items-center justify-content-between mb-3 mt-2">
 <h5 class="mb-0">Featured restaurants</h5>
-<a href="listing.jsp" class="small font-weight-bold text-dark">See all <i class="mdi mdi-chevron-right mr-2"></i></a>
+<a href="listProduct" class="small font-weight-bold text-dark">See all <i class="mdi mdi-chevron-right mr-2"></i></a>
 </div>
 
 <div class="row">
@@ -417,7 +417,7 @@
 
 <div class="d-flex align-items-center justify-content-between mb-3 mt-2">
 <h5 class="mb-0">Asian food</h5>
-<a href="listing.jsp" class="small font-weight-bold text-dark">See all <i class="mdi mdi-chevron-right mr-2"></i></a>
+<a href="listProduct" class="small font-weight-bold text-dark">See all <i class="mdi mdi-chevron-right mr-2"></i></a>
 </div>
 
 <div class="row">
@@ -599,7 +599,7 @@
 </div>
 </div>
 <div class="modal-footer justify-content-start">
-<a href="listing.jsp" class="btn btn-primary btn-block mt-2">Apply filters</a>
+<a href="listProduct" class="btn btn-primary btn-block mt-2">Apply filters</a>
 </div>
 </div>
 </div>

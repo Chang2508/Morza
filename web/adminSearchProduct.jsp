@@ -87,7 +87,7 @@
 <div class="bg-white py-2 collapse-inner rounded">
 <h6 class="collapse-header">Pages:</h6>
 <a class="collapse-item" href="detail.jsp">Details</a>
-<a class="collapse-item" href="listing.jsp">Listing</a>
+<a class="collapse-item" href="listProduct">Listing</a>
 <a class="collapse-item" href="messages.jsp">Messages</a>
 <a class="collapse-item" href="search.jsp">Search</a>
 <a class="collapse-item" href="buttons.jsp">Components</a>
@@ -453,19 +453,19 @@
         </table>
 
     </c:if>
+<%--<c:if test="${empty requestScope.PRO_RESULT}">
+        <h3>
+            Can't find the match product!!!
+        </h3>
 
+       
+    </c:if>--%>
 
 
         </div>
        
     </div>      
-      <c:if test="${empty requestScope.PRO_RESULT}">
-        <h3>
-            Can't find the match account!!!
-        </h3>
-
-       
-    </c:if>
+      
 </div>    
     
     
