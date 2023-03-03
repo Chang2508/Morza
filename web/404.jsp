@@ -35,45 +35,45 @@
 
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-<a class="sidebar-brand d-flex align-items-center" href="index.html">
+<a class="sidebar-brand d-flex align-items-center" href="index.jsp">
 <div class="sidebar-brand-icon">
 <img src="img/logo.png" class="img-fluid">
 </div>
 </a>
 
 <li class="nav-item">
-<a class="nav-link" href="index.html">
+<a class="nav-link" href="index.jsp">
 <i class="mdi mdi-home-variant-outline"></i>
 <span>Home</span></a>
 </li>
 
 <li class="nav-item active">
-<a class="nav-link" href="explore.html">
+<a class="nav-link" href="explore.jsp">
 <i class="mdi mdi-grid-large"></i>
 <span>Explore</span></a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="favourities.html">
+<a class="nav-link" href="favourities.jsp">
 <i class="mdi mdi-bookmark-outline"></i>
 <span>Favourities</span></a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="orders.html">
+<a class="nav-link" href="orders.jsp">
 <i class="mdi mdi-book-open"></i>
 <span>Orders</span></a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link d-flex align-items-center" href="messages.html">
+<a class="nav-link d-flex align-items-center" href="messages.jsp">
 <i class="mdi mdi-message-text-outline mr-2"></i>
 <span>Messages</span>
 <span class="rounded-circle bg-white text-primary ml-auto px-2 py-1">2</span></a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="settings.html">
+<a class="nav-link" href="settings.jsp">
 <i class="mdi mdi-cog"></i>
 <span>Settings</span></a>
 </li>
@@ -107,7 +107,7 @@
 <i class="mdi mdi-food mb-3"></i>
 <p class="text-black mb-1">Free delivery on<br>all orders over <span class="text-primary">$25</span></p>
 <p class="small">It is a limited time offer that will expire soon.</p>
-<a href="explore.html" class="btn btn-primary btn-block btn-sm">Order now <i class="pl-3 fas fa-long-arrow-alt-right"></i></a>
+<a href="explore.jsp" class="btn btn-primary btn-block btn-sm">Order now <i class="pl-3 fas fa-long-arrow-alt-right"></i></a>
 </div>
 
 <!--<div class="d-none d-md-block">
@@ -168,25 +168,7 @@
                                                 </ul>
                                             </li>  
         </c:if>
-                              <c:if test="${ empty name}">              
-                                            <li class="nav-item dropdown no-arrow mx-2 osahan-t-loc">
-<a class="nav-link dropdown-toggle text-dark" href="signin.jsp" >
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
-  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-</svg><span class="ml-2">Sign in</span>
-</a>
-</li>
-
-<li class="nav-item dropdown no-arrow mx-2 osahan-t-loc">
-<a class="nav-link dropdown-toggle text-dark" href="signup.jsp" >
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-up" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
-  <path fill-rule="evenodd" d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z"/>
-</svg><span class="ml-2">Sign up</span>
-</a>
-</li>
-</c:if>
+                             
     
     
 <ul class="navbar-nav">
@@ -215,6 +197,26 @@
 <span class="mdi mdi-crosshairs-gps"></span><span class="ml-2">San Frnciso, california</span>
 </a>
 </li>-->
+ <c:if test="${ empty name}">              
+                                            <li class="nav-item dropdown no-arrow mx-2 osahan-t-loc">
+<a class="nav-link dropdown-toggle text-dark" href="signin.jsp" >
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+</svg><span class="ml-2">Sign in</span>
+</a>
+</li>
+
+<li class="nav-item dropdown no-arrow mx-2 osahan-t-loc">
+<a class="nav-link dropdown-toggle text-dark" href="signup.jsp" >
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1h-2z"/>
+  <path fill-rule="evenodd" d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3z"/>
+</svg><span class="ml-2">Sign up</span>
+</a>
+</li>
+</c:if>
+
 
 <li class="nav-item dropdown no-arrow mx-2 osahan-t-pu">
 <a class="nav-link dropdown-toggle text-dark" href="orders.jsp">

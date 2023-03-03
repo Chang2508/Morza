@@ -18,11 +18,13 @@ import javax.naming.NamingException;
 public class Test {
     public static void main(String[] args) throws SQLException, NamingException {
         CustomerDAO dao = new CustomerDAO();
-
-        CustomerDTO c = dao.getAccountByUserName("abc");
+CustomerDTO dto = dao.getAccount("hihihi");
+        System.out.println(dto);
+       
+       }
         
         
-            System.out.println(c);
+           
         }
-    }
+    
 

@@ -16,10 +16,11 @@
        
         <h1>Search Page</h1>
 
-        <c:set var="customer" value="${requestScope.customer}"/>
+        <c:set var="customer" value="${requestScope.CUSTOMER}"/>
         <c:if test="${empty customer}">
             <p>Not match</p>
         </c:if>
+        
         <c:if test="${not empty customer}">
        
                 <table border="1">
@@ -35,7 +36,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                   
+                        <c:forEach var="cust" items="${customer}" varStatus="iCount">
                         <form action="UpdateAccountController">
                             <tr>
                             <td>
@@ -70,7 +71,7 @@
                         
                         </form>
 
-                        
+                        </c:forEach>
                     </tbody>
                 </table>
 

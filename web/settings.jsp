@@ -254,9 +254,9 @@
 <div class="d-flex align-items-center justify-content-between mb-3 mt-2">
 <h5 class="mb-0">Settings</h5>
 </div>
-
+ <%--<c:set var="cust" value="${sessionScope.username}" />--%>
 <p class="mb-2">General</p>
-<a href="#" class="text-decoration-none text-dark d-flex align-items-center rounded bg-white shadow-sm p-3 mb-1" data-toggle="modal" data-target="#personalModal">
+<a href="UpdateAccountController?cusername=${sessionScope.username}" class="text-decoration-none text-dark d-flex align-items-center rounded bg-white shadow-sm p-3 mb-1">
 <p class="mb-0 h5 text-primary"><i class="mdi mdi-account-outline"></i></p>
 <p class="ml-3 mb-0">Personal information</p>
 <p class="mb-0 h5 ml-auto"><i class="mdi mdi-chevron-right"></i></p>
@@ -324,9 +324,9 @@
 </a>
 <%--<c:set var="acc" value="${requestScope.account}" />--%>
        
-<div class="modal fade" id="personalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog">
-    <form action="UpdateAccountController">
+<!--<div class="modal fade" id="personalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--<div class="modal-dialog">-->
+<!--    <form action="UpdateAccountController">
 <div class="modal-content">
 <div class="modal-header">
 <h5 class="modal-title" id="exampleModalLabel">Personal Information</h5>
@@ -390,14 +390,14 @@
 </div>
 </div>
 <div class="modal-footer border-0">
-<!--<button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-primary btn-block">Update profile</button>-->
+<button type="button" data-dismiss="modal" aria-label="Close" class="btn btn-primary btn-block">Update profile</button>
 <input type="submit" value="Update profile" name="" data-dismiss="modal" aria-label="Close" class="btn btn-primary btn-block"/>
+</div>-->
+<!--</div>
+</form>-->-->
+<!--</div>
 </div>
-</div>
-</form>
-</div>
-</div>
-</form>
+</form>-->
 <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">

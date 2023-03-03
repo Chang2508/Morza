@@ -27,8 +27,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "UpdateAccountController", urlPatterns = {"/UpdateAccountController"})
 public class UpdateAccountController extends HttpServlet {
 
-//    private final String SETTINGS_PAGE = "settings.jsp";
-//    private final String ERROR_PAGE = "404.jsp";
+    private final String PROFILE_PAGE = "accountInfo.jsp";
+    private final String ERROR_PAGE = "404.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,33 +42,42 @@ public class UpdateAccountController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-         String username = request.getParameter("txtUsername");
-//        String url = SETTINGS_PAGE;
-        try {
-//            String username = request.getParameter("txtUsername");
+//        PrintWriter out = response.getWriter();
+//             String username = request.getParameter("txtUsername");
 //            String password = request.getParameter("txtPassword");
 //            String phoneNum = request.getParameter("txtPhoneNum");
 //            String custName = request.getParameter("txtCustName");
 //            String address = request.getParameter("txtAddress");
 //            String email = request.getParameter("txtEmail");
-            //1. call DAO
-            CustomerDAO dao = new CustomerDAO();
-            CustomerDTO customer = dao.getAccountByUserName(username);
-             dao.updateAccount(customer);
-            HttpSession session = request.getSession();
-                session.setAttribute("customer", customer);
-
-           
- 
-        }catch (NamingException ex) {
-             log("ShowItemsServlet _ Naming _ " + ex.getMessage());
-        } catch (SQLException ex) {
-            log("ShowItemsServlet _ SQL _ " + ex.getMessage());
-        } finally {
-            RequestDispatcher rd = request.getRequestDispatcher("settings.jsp");
-            rd.forward(request, response);
-        }
+////         List<CustomerDTO> result;
+////         CustomerDTO result;
+//        String url = PROFILE_PAGE;
+//        try {
+////             CustomerDAO dao = new CustomerDAO();
+////           dao.getAccounts();
+//         
+////result = dao.getItemsListByUsername("hihihi");
+//CustomerDAO dao = new CustomerDAO();
+////            dao.getAccounts();
+//             CustomerDTO result = dao.getAccount("hihihi");
+//System.out.println(result);
+////            System.out.println("Result size: " + result.size());
+//            request.setAttribute("CUSTOMER", result);
+//            System.out.println("CUSTOMER attribute set on request: " + request.getAttribute("CUSTOMER"));
+//            //1. call DAO
+//           
+//           
+//           
+// 
+//        }catch (NamingException ex) {
+//             log("ShowItemsServlet _ Naming _ " + ex.getMessage());
+//        } catch (SQLException ex) {
+//            log("ShowItemsServlet _ SQL _ " + ex.getMessage());
+//        } finally {
+//            RequestDispatcher rd = request.getRequestDispatcher(url);
+//            rd.forward(request, response);
+//            out.close();
+//        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -83,7 +92,25 @@ public class UpdateAccountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //        processRequest(request, response);
+         String username = request.getParameter("cusername");
+           
+            
+            try {
+//                CustomerDTO customer = new CustomerDTO(username, password, phoneNum, address, custName, email);
+                   CustomerDAO dao = new CustomerDAO();
+                   CustomerDTO customer = dao.getAccount(username);
+                   request.setAttribute("CUSTOMER", customer);
+           
+           }catch (NamingException ex) {
+             log("ShowItemsServlet _ Naming _ " + ex.getMessage());
+        } catch (SQLException ex) {
+            log("ShowItemsServlet _ SQL _ " + ex.getMessage());
+        } finally {
+            RequestDispatcher rd = request.getRequestDispatcher("accountInfo.jsp");
+            rd.forward(request, response);
+          
+        }
     }
 
     /**
@@ -97,7 +124,25 @@ public class UpdateAccountController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+       String username = request.getParameter("txtUsername");
+            String password = request.getParameter("txtPassword");
+            String phoneNum = request.getParameter("txtPhoneNum");
+            String custName = request.getParameter("txtCustName");
+            String address = request.getParameter("txtAddress");
+            String email = request.getParameter("txtEmail");
+            try {
+            CustomerDAO dao = new CustomerDAO();
+            dao.updateAccount(username, password, phoneNum, address, custName, email);
+           }catch (NamingException ex) {
+             log("ShowItemsServlet _ Naming _ " + ex.getMessage());
+        } catch (SQLException ex) {
+            log("ShowItemsServlet _ SQL _ " + ex.getMessage());
+        } finally {
+            RequestDispatcher rd = request.getRequestDispatcher("settings.jsp");
+            rd.forward(request, response);
+          
+        }
     }
 
     /**

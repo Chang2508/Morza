@@ -83,7 +83,9 @@
                                             <div class="pt-1 mb-4">
                                                 <button class="btn btn-dark btn-lg btn-block" type="submit" name="btAction">Login</button>
                                             </div>
-<p class="text-center"><a href="forgot.jsp" class="text-dark">Forgot password?</a></p>
+
+<p class="text-center"><a href="forgot.jsp" class="text-dark">Forgot password?</a><a href="index.jsp" class="text-red" >&nbsp&nbsp&nbsp&nbspReturn Home Page</a></p>
+<p class="text-center"></p>
 <a href="signup.jsp" class="btn btn-light btn-block mb-2">Create an account</a>
 </div>
 </form>

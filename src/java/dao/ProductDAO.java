@@ -409,4 +409,53 @@ public class ProductDAO implements Serializable{
             }
         }
     }
+        
+ public ProductDTO getProductbyID(String productID) 
+            throws SQLException, NamingException {
+        
+        ProductDTO result = null;
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            con = DBHelper.makeConnection();
+            if (con != null) {
+                String sqlStr = "select * \n"
+                        + "FROM Product p inner JOIN  Picture i ON p.picID = i.picID  inner JOIN Category c ON p.CategoryID = c.CategoryID\n"
+                        + "WHERE productID = ?";
+                stmt = con.prepareStatement(sqlStr);
+                stmt.setString(1, productID);
+                rs = stmt.executeQuery();
+                
+                while (rs.next()) {
+                    //get field/column
+//                    String productID = rs.getString("productID");
+                    String proName = rs.getString("proName");
+                    String description = rs.getString("description");
+                    int yearPublish = rs.getInt("yearPublish");
+                    float price = rs.getFloat("price");
+                    String catgoryName = rs.getString("catgoryName");
+                    byte[] picData = rs.getBytes("picdata");
+                    String picID = rs.getString("picID");
+
+                    //Create DTO instance
+                    result = new ProductDTO(productID, proName, description, yearPublish, price, catgoryName, picID, picData);
+              return result;
+                }
+                
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stmt != null) {
+                stmt.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return result;
+    }       
 }

@@ -255,20 +255,61 @@
 <h5 class="mb-0">Fast Delivery</h5>
 </div>
 
-<div class="row">
-
+<!--<div class="row">-->
      <c:set var="context" value="${pageContext.request.contextPath}" />
-<%--<c:if test="${not empty requestScope.IMG_RESULT}">--%>
-<c:if test="${not empty requestScope.IMG_RESULT}" >
-  <%--<c:set var="pa" value="${requestScope.IMG_RESULT}"/>--%>
-  <div class="product-container">
+     <c:if test="${not empty requestScope.IMG_RESULT}" >
+    <!--<section style="background-color: #eee;">-->
+<div class="row">
+  <c:forEach var="img" items="${requestScope.IMG_RESULT}">
+    <div class="col-md-4 py-4">
+      <form action="listProduct">
+        <div class="col">
+          <div class="card">
+              <a href="ProductDetailController?pid=${img.productID}">
+            <img src="data:image/jpg    ;base64,${img.base64ImageData}" class="card-img-top" alt="" width="418px" height="279px"/>
+            <div class="card-body">
+              <div class="d-flex justify-content-between mb-2 ">
+                <p class="medium mb-3"><a href="#!" class="text-muted">${img.catgoryName}</a></p>
+                <p class="small text-danger"><s>$10000</s></p>
+              </div>
+
+              <div class="d-flex justify-content-between mb-3">
+                <h5 class="mb-0">${img.proName}</h5>
+                <p class="small mb-2"><h5 class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${img.price}</h5>
+              </div>
+
+              <div class="d-flex justify-content-between mb-2">
+                <p class="text-muted mb-0">Year of production: <span class="fw-bold">${img.yearPublish}</span></p>
+                <div class="ms-auto text-warning">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+                
+    </div>
+           </a>     
+    <c:if test="${counter.index % 3 == 2}">
+      </div>
+      <div class="row">
+    </c:if>
+  </c:forEach>
+</div>
+            <!--</section>-->
+<!--  <div class="product-container">
    <c:forEach var="img" items="${requestScope.IMG_RESULT}">
       <form action="listProduct">
-        <a href="#" class="text-decoration-none text-dark col-lg-3 col-md-6 mb-4" data-toggle="modal" data-target="#myitemsModal">
+          <a href="ProductDetailController?pid=${img.productID}" class="text-decoration-none text-dark col-lg-3 col-md-6 mb-4" >
          <img src="data:image/jpg    ;base64,${img.base64ImageData}"  width="200px" height="200px"/>
           <div class="d-flex align-items-center mt-3 mb-2">
             <p class="text-black h6 m-0">${img.proName}</p>
-            <!--<span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${img.price}</span>-->
+            <span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${img.price}</span>
           </div>
           <p class="small mb-2"><span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${img.price}</span> <i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> ${img.catgoryName} <i class="mdi mdi-motorbike ml-2 mr-2"></i>Freeship</p>
         </a>
@@ -284,7 +325,8 @@
             Can't find the match account!!!
         </h3>
     </c:if>
-<style>
+-->
+<!--<style>
     .product-container {
   width: 100%;
   display: flex;
@@ -297,7 +339,7 @@
   padding: 0 10px;
   float: left;
 }
-</style>
+</style>-->
    
 <!--      <c:set var="context" value="${pageContext.request.contextPath}" />
         <h1>Hello World!</h1>

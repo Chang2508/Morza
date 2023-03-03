@@ -72,18 +72,18 @@ public class LoginController extends HttpServlet {
 
                 } else if (result != null) {
                     url = LOGIN_HOMEPAGE;
-
+                  
                     HttpSession session = request.getSession();
                     session.setAttribute("username", username);
                     session.setAttribute("custName", dao.getCustName(username));
-                    session.setAttribute("password", dao.getPassword(username));
-                    session.setAttribute("phoneNum", dao.getPhoneNum(username));
-                    session.setAttribute("email", dao.getEmail(username));
-                    session.setAttribute("address", dao.getAddress(username));
+//                    session.setAttribute("password", dao.getPassword(username));
+//                    session.setAttribute("phoneNum", dao.getPhoneNum(username));
+//                    session.setAttribute("email", dao.getEmail(username));
+//                    session.setAttribute("address", dao.getAddress(username));
 //                    
             
            
-                request.setAttribute("customer", dao.getAccountByUserName(username));
+              
                 } else {
                     errors.setErrorMsg("Wrong username or password! Please check again...");
                     isError = true;
