@@ -309,10 +309,10 @@
 <a href="ShowProductInDrinkCategory" class="text-dark text-decoration-none col-xl-4 col-lg-12 col-md-12">
 <div class="bg-white shadow-sm rounded d-flex align-items-center p-1 mb-4 osahan-list">
 <div class="bg-light p-3 rounded">
-<img src="img/burgerking.png" class="img-fluid">
+    <img src="img/drink/drinkSupermarket.jpg" class="img-fluid">
 </div>
 <div class="mx-3 py-2 w-100">
-<p class="mb-2 text-black">Burger King</p>
+<p class="mb-2 text-black">Drink</p>
 <p class="small mb-2">
 <i class="mdi mdi-star text-warning mr-1"></i> <span class="font-weight-bold text-dark">0.8</span> (873)
 <i class="mdi mdi-silverware-fork-knife ml-3 mr-1"></i> Burger

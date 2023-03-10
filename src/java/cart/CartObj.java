@@ -14,12 +14,12 @@ import java.util.Map;
  * @author DELL
  */
 public class CartObj implements Serializable{
-    private Map<Integer, Integer> cart;
-    public Map<Integer, Integer> getCart() {
+    private Map<String, Integer> cart;
+    public Map<String, Integer> getCart() {
         return cart;
     }
     
-     public void addProductToCart(int productId, int quantity) {
+     public void addProductToCart(String productId, int quantity) {
         // 1. Check existed cart
         if (this.cart == null) {
             this.cart = new HashMap<>();
@@ -33,7 +33,7 @@ public class CartObj implements Serializable{
         // 3. Update cart
         this.cart.put(productId, quantity);
     }
-     public void removeProductFromCart(int productId) {
+     public void removeProductFromCart(String productId) {
         // 1. Check existed cart
         if (this.cart == null) {
             return;
