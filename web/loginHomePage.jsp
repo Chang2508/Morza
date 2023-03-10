@@ -231,7 +231,7 @@
 </div>
 </form>
 <a href="#" class="btn btn-primary " data-toggle="modal" data-target="#filtersModal"><i class="mdi mdi-filter-variant"></i></a>
-<a href="#" class="btn btn-danger" data-toggle="modal" data-target="#cartModal"><i class="mdi mdi-shopping-outline"></i></a>
+<a href="viewCart.jsp" class="btn btn-danger" ><i class="mdi mdi-shopping-outline"></i></a>
 </div>
 </nav>
 
@@ -530,7 +530,9 @@
 <p class="mb-0"><a href="#" class="text-decoration-none text-primary"><i class="fas fa-plus mr-2 bg-light rounded p-2"></i> Add special instructions</a></p>
 </div>
 <div class="modal-footer">
-<button data-toggle="modal" data-target="#cartModal" class="btn btn-primary btn-block">Add ($15.00)</button>
+    
+<!--<button data-toggle="modal" data-target="#cartModal" class="btn btn-primary btn-block">Add ($15.00)</button>-->
+
 </div>
 </div>
 </div>
@@ -605,7 +607,7 @@
 </div>
 </div>
 
-<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!--<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
@@ -679,7 +681,7 @@
 </div>
 </div>
 </div>
-</div>
+</div>-->
 
 <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog">

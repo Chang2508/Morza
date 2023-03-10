@@ -274,7 +274,7 @@
     
 
 <%--<c:forEach var="cust" items="${customer}" varStatus="iCount">--%>
-    <form action="UpdateAccountController" method="get">
+    <form action="UpdateAccountController">
         <!--<form action="AccountInfoController" method="post">-->
 <div class="modal-content">
 <div class="modal-header">

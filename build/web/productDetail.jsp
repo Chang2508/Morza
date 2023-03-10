@@ -313,9 +313,10 @@
                                                                                                           
                                                
 						<div class="action">
-							  Quantity: <input type="number" name="quantity" 
-                                 value="${quantity}" /> <input type="submit" value="Add to Cart" name="btAction"/>
-                                                       
+							  Quantity: <input class="border-primary" type="number" name="quantity" 
+                                 value="${quantity}" />
+                                                          
+                                                          <button type="submit" name="btAction" class="btn btn-primary" value="Add To Cart"/><span class="glyphicon glyphicon-shopping-cart"></span>Add To Cart</button>
 							<!--<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>-->
 						</div>
 					</div>
