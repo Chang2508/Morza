@@ -271,10 +271,12 @@
 </div>
 </c:if>
    <c:if test="${not empty sessionScope.username}">
-    
+    <a href="DeleteProfileCustomerController?txtUsername=${sessionScope.username}" class="text-decoration-none text-dark d-flex align-items-center rounded bg-white shadow-sm p-3 mb-1">
+    <button class="btn btn-outline-primary btn-sm px-3">Delete</button>
+</a>
 
 <%--<c:forEach var="cust" items="${customer}" varStatus="iCount">--%>
-    <form action="UpdateAccountController">
+    <form action="UpdateAccountController" method="get">
         <!--<form action="AccountInfoController" method="post">-->
 <div class="modal-content">
 <div class="modal-header">
@@ -288,7 +290,8 @@
 <div class="d-flex align-items-center mb-4">
 <img src="img/user1.png" class="img-fluid mr-3 rounded-circle">
 <button class="btn btn-primary mr-2 btn-sm px-3">Upload</button>
-<button class="btn btn-outline-primary btn-sm px-3">Delete</button>
+
+
 </div>
 <p class="text-dark mb-2 small">Profile details</p>
 

@@ -54,6 +54,7 @@ private final String LISTING_PAGE = "listing.jsp";
                 if (img != null) {
                     request.setAttribute("IMG_RESULT", img);
                     url = LISTING_PAGE;
+
                 } else {
                     url = ERROR;
                 }

@@ -374,7 +374,7 @@
             <form action="MainController" method="POST">
                 Search Keyword: <input type="text" name="txtSearchValue" value="" /> 
                 <input type="submit" value="Find" name="btAction" />
-                 <input type="submit" value="SHOWIMG" name="btAction" />
+                 <input type="submit" value="Show all product" name="btAction" />
 
 
             </form>

@@ -259,7 +259,7 @@
 
 <div class="row">
 
-<a href="detail.jsp" class="text-dark text-decoration-none col-xl-4 col-lg-12 col-md-12">
+<a href="ShowProductInDrinkCategory" class="text-dark text-decoration-none col-xl-4 col-lg-12 col-md-12">
 <div class="bg-white shadow-sm rounded d-flex align-items-center p-1 mb-4 osahan-list">
 <div class="bg-light p-3 rounded">
 <img src="img/burgerking.png" class="img-fluid">

@@ -5,24 +5,29 @@
  */
 package controller;
 
-import cart.CartObj;
+import dao.ProductDAO;
+import dto.ProductDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Map;
+import java.sql.SQLException;
+import java.util.Base64;
+import java.util.List;
+import javax.naming.NamingException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author DELL
+ * @author Asus
  */
-@WebServlet(name = "RemoveFromCartController", urlPatterns = {"/RemoveFromCartController"})
-public class RemoveFromCartController extends HttpServlet {
-
+@WebServlet(name = "ShowProductInDrinkCategory", urlPatterns = {"/ShowProductInDrinkCategory"})
+public class ShowProductInDrinkCategory extends HttpServlet {
+private final String DETAIL_PAGE = "detail.jsp";
+    private final String ERROR = "404.jsp";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -33,31 +38,34 @@ public class RemoveFromCartController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException{
         response.setContentType("text/html;charset=UTF-8");
-        String url = "viewCart.jsp";
-        try {
-            HttpSession session = request.getSession(false);
-            if (session != null) {
-                CartObj cart = (CartObj)session.getAttribute("CART");
-                if (cart != null) {
-                    Map<String, Integer> cartList = cart.getCart();
-                    if (cartList != null) {
-                        String[] proList = request.getParameterValues("isRemove");
-                        if (proList != null && proList.length > 0) {
-                            for (String strId : proList) {
-                            
-                                cart.removeProductFromCart(strId);
-                            }
-                            session.setAttribute("CART", cart);
-                        }
-                    }
-
-                }
-            }
-        } finally {
-            response.sendRedirect(url);
+        String url = DETAIL_PAGE;
+        try  {
             
+            ProductDAO daon = new ProductDAO();
+                daon.showProductInDrinkCategory();
+                List<ProductDTO> img = daon.getItemsList();
+                //4. Send to view
+                for (ProductDTO productc : img) {
+                        String base64ImageData = Base64.getEncoder().encodeToString(productc.getPicData());
+                        productc.setBase64ImageData(base64ImageData);
+                    }
+                if (img != null) {
+                    request.setAttribute("DRINK_CATE", img);
+                    url = DETAIL_PAGE;
+
+                } else {
+                    url = ERROR;
+                }
+            
+        } catch(SQLException ex){
+            ex.printStackTrace();
+        } catch(NamingException ex){
+            ex.printStackTrace();
+        } finally {
+            RequestDispatcher rd = request.getRequestDispatcher(url);
+            rd.forward(request, response);
         }
     }
 

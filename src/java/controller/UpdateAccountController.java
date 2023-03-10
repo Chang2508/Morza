@@ -134,8 +134,6 @@ public class UpdateAccountController extends HttpServlet {
             try {
             CustomerDAO dao = new CustomerDAO();
             dao.updateAccount(username, password, phoneNum, address, custName, email);
-                CustomerDTO customer = dao.getAccount(username);
-                   request.setAttribute("CUSTOMER", customer);
            }catch (NamingException ex) {
              log("ShowItemsServlet _ Naming _ " + ex.getMessage());
         } catch (SQLException ex) {

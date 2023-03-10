@@ -247,259 +247,73 @@
 <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#cartModal"><i class="mdi mdi-shopping-outline"></i></a>
 </div>
 </nav>
-        <style>
-/*            body{
-    background: #ddd;
-    min-height: 100vh;
-    vertical-align: middle;
-    display: flex;
-    font-family: sans-serif;
-    font-size: 0.8rem;
-    font-weight: bold;
-}*/
-/*.title{
-    margin-bottom: 5vh;
-}*/
-.card{
-    margin: auto;
-    max-width: 950px;
-    width: 90%;
-    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 1rem;
-    border: transparent;
-}
-@media(max-width:767px){
-    .card{
-        margin: 3vh auto;
-    }
-}
-.cart{
-    background-color: #fff;
-    padding: 4vh 5vh;
-    border-bottom-left-radius: 1rem;
-    border-top-left-radius: 1rem;
-}
-@media(max-width:767px){
-    .cart{
-        padding: 4vh;
-        border-bottom-left-radius: unset;
-        border-top-right-radius: 1rem;
-    }
-}
-.summary{
-    background-color: #ddd;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    padding: 4vh;
-    color: rgb(65, 65, 65);
-}
-@media(max-width:767px){
-    .summary{
-    border-top-right-radius: unset;
-    border-bottom-left-radius: 1rem;
-    }
-}
-.summary .col-2{
-    padding: 0;
-}
-.summary .col-10
-{
-    padding: 0;
-}.row{
-    margin: 0;
-}
-/*.title b{
-    font-size: 1.5rem;
-}*/
-.main{
-    margin: 0;
-    padding: 2vh 0;
-    width: 100%;
-}
-/*.col-2, .col{
-    padding: 0 1vh;
-}*/
-a{
-    padding: 0 1vh;
-}
-.close{
-    margin-left: auto;
-    font-size: 0.7rem;
-}
-img{
-    width: 3.5rem;
-}
-.back-to-shop{
-    margin-top: 4.5rem;
-}
-h5{
-    margin-top: 4vh;
-}
-hr{
-    margin-top: 1.25rem;
-}
-form{
-    padding: 3vh 0;
-}
-/*select{
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 1.5vh 1vh;
-    margin-bottom: 4vh;
-    outline: none;
-    width: 100%;
-    background-color: rgb(247, 247, 247);
-}
-input{
-    border: 1px solid rgba(0, 0, 0, 0.137);
-    padding: 1vh;
-    margin-bottom: 4vh;
-    outline: none;
-    width: 100%;
-    background-color: rgb(247, 247, 247);
-}
-input:focus::-webkit-input-placeholder
-{
-      color:transparent;
-}*/
-/*.btn{
-    background-color: #000;
-    border-color: #000;
-    color: white;
-    width: 100%;
-    font-size: 0.7rem;
-    margin-top: 4vh;
-    padding: 1vh;
-    border-radius: 0;
-}
-.btn:focus{
-    box-shadow: none;
-    outline: none;
-    box-shadow: none;
-    color: white;
-    -webkit-box-shadow: none;
-    -webkit-user-select: none;
-    transition: none; 
-}
-.btn:hover{
-    color: white;
-}*/
-/*a{
-    color: black; 
-}
-a:hover{
-    color: black;
-    text-decoration: none;
-}*/
-/* #code{
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253) , rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
-    background-repeat: no-repeat;
-    background-position-x: 95%;
-    background-position-y: center;
-}*/
-        </style>
 
 
-        <h1>Your Cart includes</h1>
-        <c:set var="cart" value="${sessionScope.CART.cart}" />
-        <c:if test="${empty cart}">
-            <h2>No items in cart...</h2>
-            <a href="listProduct">Continue shopping</a>
-        </c:if>
-            <c:if test="${not empty cart}">
-                <div class="card">
-            <div class="row">
-                <div class="col-md-8 cart">
-                    <div class="title">
-                        <div class="row">
-                            <div class="col"><h4><b>Shopping Cart</b></h4></div>
-                            <div class="col align-self-center text-right text-muted"></div>
-                        </div>
-                        
-                    </div> 
-                   
-                    <c:set var="orderTotal" value="${0}" />
-                        <form action="RemoveFromCartController">
-                            
-                            <c:forEach var="cartItem" items="${cart}" varStatus="iCount">
-                                 <c:set var="productID" value="${cartItem.key}" />
-                                <c:set var="quantity" value="${cartItem.value}" />
-                                 <c:set var="img" value="${requestScope.IMG_RESULT}"/>
-                                <jsp:useBean id="ProductDAO" scope="page" 
-                                        class="dao.ProductDAO" 
-                                        type="dao.ProductDAO" />
-                                <c:set var="pro" value="${ProductDAO.getProductbyID(productID)}" />
-                    <div class="row border-top border-bottom">
-                       
-                        <div class="row main align-items-center">
-                              <div class="col-1"><input type="checkbox" name="isRemove" 
-                                               value="${pro.productID}" /></div>
-                            <div class="col-2">
-                                
-                                 <a href="ProductDetailController?pid=${pro.productID}">
-                                     <img class="img-fluid" src="data:image/jpg    ;base64,${requestScope.IMG.base64ImageData}">
-                                 
-                            </div>
-                                     
-                            <div class="col">
-                                <div class="row text-muted">${pro.proName}</div> 
-                                <div class="row">${pro.price}</div>
-                            </div> </a>
-                            <div class="col">
-                                <a href="#">-</a><a href="#" class="border">  
-                                    <c:set var="quantity" value="${cartItem.value}" />
-                                        ${quantity}</a><a href="#">+</a>
-                            </div>
-                            <div class="col" ><f:formatNumber var="price" 
-                                                        value="${pro.price}" 
-                                                        minIntegerDigits="0" />
-                                       <i class='fas fa-dollar-sign'></i> 
-                                       <c:set var="itemTotal" value="${pro.price * quantity}"/>
-                                    <c:set var="orderTotal" value="${orderTotal + pro.price * quantity}" />
-                                        ${itemTotal}
-                                         <button type="submit" value="${pro.productID}" name="isRemove" class="close">&#10005;</button>
-                            </div>
-                           
-                            
-                        </div>
-                    </div>
-                         </c:forEach>
-                            <div class="py-4">
-                            <button type="submit" value="Remove" name="btnAction" class="btn btn-dark">Remove</button>
-                            </div>
+<div class="container-fluid">
 
-                    <!--<div class="back-to-shop"><a href="listProduct">&leftarrow;</a>Back to shop</div>-->
-                    <div class="my-1"><a href="listProduct" class="text-primary"><i class="mdi mdi-plus mr-2"></i> Add more items</a></div>
-                </div>
-                <div class="col-md-4 summary">
-                    <div><h5><b>Summary</b></h5></div>
-                    <hr>
+<!--<div class="text-center py-5 my-lg-5">
+<div class="error mx-auto mt-lg-5 pt-lg-5" data-text="404">404</div>
+<p class="lead text-gray-800 mb-5">Page Not Found</p>
+<p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
+<a href="index.jsp">&larr; Back to Dashboard</a>
+</div>
+</div>-->
 
-                    <form>
-<!--                        <p>SHIPPING</p>
-                        <select><option class="text-muted">Standard-Delivery- &euro;5.00</option></select>-->
-                        <p>GIVE CODE</p>
-                        <input id="code" placeholder="Enter your code">
-                    </form>
-                    <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                        <div class="col">TOTAL PRICE</div>
-                        <div class="col text-right">
-                              
+  <c:set var="cart" value="${sessionScope.CART.cart}" />
+  
+    
+  <c:if test="${not empty cart}" >
+         <form action="AddToCartController">
+  	<div class="container" >
+		<div class="card">
+			<div class="container-fliud">
+				<div class="wrapper row">
+					<div class="preview col-md-6">
+						
+						
+						  <img src="data:image/jpg    ;base64,${pro.base64ImageData}" width="400" height="252" />
+						 
+						
+					</div>
+					<div class="details col-md-6">
+                                            
+						<h3 class="product-title"">${pro.proName}</h3>
+						<div class="rating">
+							<div class="stars">
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star checked"></span>
+								<span class="fa fa-star"></span>
+								<span class="fa fa-star"></span>
+							</div>
+							<span class="review-no">41 reviews</span>
+						</div>
+                                                <p><i class="mdi mdi-silverware-fork-knife ml-2 mr-1"></i> ${pro.catgoryName}</p>
+						<p class="product-description">Description: ${pro.description}</p>
+						<h4 class="price">current price: <span class="badge badge-light ml-auto"><i class='fas fa-dollar-sign'></i> ${pro.price}</span></h4>
+						<p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+						 <c:if test="${empty param.quantity}">
+                    <c:set var="quantity" value="1" />
+                </c:if>
+                                                                                                          
+                                                Quantity: <input type="number" name="quantity" 
+                                 value="${quantity}" /> <br></br>
                                         
-                                    <c:set var="itemTotal" value="${pro.price * quantity}"/>
-                                    <c:set var="orderTotal" value="${orderTotal}" />
-                                    ${orderTotal}
-                        </div>
-                    </div>
-                        
-                    <button class="btn btn-primary">CHECKOUT</button>
-                    <a href="checkOut.jsp">Checkout</a>
-                </div>
-                    
-                    </form>
-       
-            </div>
-        </div>
-</c:if>  
+						<div class="action">
+							<button class="btn btn-primary" type="submit">add to cart</button>
+                                                        <input type="hidden" name="proID" value="${pro.productID}" />
+							<!--<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  
+    </form>
+  </c:if>
+  
+
 </div>
 
 

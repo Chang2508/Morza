@@ -26,8 +26,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "ShowImageController", urlPatterns = {"/ShowImageController"})
 public class ShowImageController extends HttpServlet {
-  private final String SHOWIMG = "showImg.jsp";
+
+    private final String SHOWIMG = "showallimage.jsp";
     private final String ERROR = "404.jsp";
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,27 +43,27 @@ public class ShowImageController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String url = SHOWIMG;
-        try  {
-            
-            ProductDAO daon = new ProductDAO();
-                daon.showIMG();
-                List<ProductDTO> img = daon.getItemsList();
-                //4. Send to view
-                for (ProductDTO productc : img) {
-                        String base64ImageData = Base64.getEncoder().encodeToString(productc.getPicData());
-                        productc.setBase64ImageData(base64ImageData);
-                    }
-                if (img != null) {
-                    request.setAttribute("IMG_RESULT", img);
-                    url = SHOWIMG;
+        try {
 
-                } else {
-                    url = ERROR;
-                }
-            
-        } catch(SQLException ex){
+            ProductDAO daon = new ProductDAO();
+            daon.showIMG();
+            List<ProductDTO> img = daon.getItemsList();
+            //4. Send to view
+            for (ProductDTO productc : img) {
+                String base64ImageData = Base64.getEncoder().encodeToString(productc.getPicData());
+                productc.setBase64ImageData(base64ImageData);
+            }
+            if (img != null) {
+                request.setAttribute("IMG_RESULT", img);
+                url = SHOWIMG;
+
+            } else {
+                url = ERROR;
+            }
+
+        } catch (SQLException ex) {
             ex.printStackTrace();
-        } catch(NamingException ex){
+        } catch (NamingException ex) {
             ex.printStackTrace();
         } finally {
             RequestDispatcher rd = request.getRequestDispatcher(url);

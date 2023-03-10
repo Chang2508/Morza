@@ -33,7 +33,7 @@ private final String LOGIN_PAGE ="login.jsp";
     private final String SHOW_PRODUCT_CONTROLLER ="ShowProductController";
     private final String SHOW_IMG_CONTROLLER ="ShowImageController";
     private final String PRODUCT_ADMIN ="ManageProductController";
-    
+       private final String DELETE_PROFILE_CUSTOMER = "DeleteProfileCustomerController";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -70,10 +70,12 @@ private final String LOGIN_PAGE ="login.jsp";
                 url = BAN_CONTROLLER;
             } else if (button.equals("Details")){
                 url = SHOW_PRODUCT_CONTROLLER;
-            } else if (button.equals("SHOWIMG")){
+            } else if (button.equals("Show all product")){
                 url = SHOW_IMG_CONTROLLER;
              } else if (button.equals("Find")){
                 url = PRODUCT_ADMIN;    
+            } else if (button.equals("Delete")){
+                url = DELETE_PROFILE_CUSTOMER;
             }
         } finally {
             RequestDispatcher rd = request.getRequestDispatcher(url);

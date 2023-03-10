@@ -254,6 +254,8 @@
 <div class="d-flex align-items-center justify-content-between mb-3 mt-2">
 <h5 class="mb-0">Fast Delivery</h5>
 </div>
+    
+
 
 <!--<div class="row">-->
      <c:set var="context" value="${pageContext.request.contextPath}" />
